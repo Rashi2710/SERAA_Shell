@@ -125,15 +125,17 @@
             </div>
             <div class="grid" id="product-launcher"
                  style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); max-width: 1120px;"></div>
+          </section>
 
-            <!-- Assure governance strip -->
-            <a href="assure.html" class="assure-strip" title="Open Assure Governance View">
-              <div class="assure-strip-left">
-                <span class="assure-status-dot"></span>
-                <span>Assure is watching 4 products, 0 open risk items</span>
-              </div>
-              <span style="font-size: 12px; color: var(--accent); font-weight: 500;">View Governance &rarr;</span>
-            </a>
+          <!-- 3. Platform — the shell's own surfaces. On a launcher home these are
+               first-class destinations, not links buried in a menu. Figures come
+               from the same SERAA_CONFIG the product cards read. -->
+          <section style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">Platform</h2>
+              <span class="section-sub">Across every product</span>
+            </div>
+            <div class="grid grid-3" id="platform-row"></div>
           </section>
 
           <!-- 2. Quick-Start Triad (Foundry pattern) -->
