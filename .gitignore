@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# local pre-pivot safety copy of the single-file prototype
+seraa-product.backup.html

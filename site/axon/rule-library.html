@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXON — Rule Library</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <!-- Wordmark with Axon purple mark -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="product-dot dot-purple"></span>
+          <span class="brand-wordmark" style="font-size: 15px;">AXON</span>
+        </div>
+
+        <span class="separator" style="color: var(--border-strong); margin: 0 4px;">|</span>
+
+        <!-- System / Organisation / Project Breadcrumb-style Scope Selector (Single source of scope) -->
+        <nav class="scope-breadcrumb" aria-label="System Scope Hierarchy">
+          <span class="scope-pill">System</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill">Vantara Org</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill" style="font-weight: 600; color: var(--text);">Preventive Maintenance</span>
+        </nav>
+      </div>
+
+      <div class="app-header-right">
+        <span class="badge badge-muted" style="font-size: 11px;">Axon SBAC Standalone</span>
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Left Icon Rail + Main Surface -->
+    <div class="shell-body">
+      <!-- Icon Rail (Chat, Insights, Rule Library, Workflows, Data, Settings) -->
+      <aside class="shell-rail" aria-label="Axon Rail Navigation">
+        <a href="#chat" class="rail-btn" title="Chat">
+          <span class="rail-icon-glyph icon icon-message-circle-01"></span>
+          <span>Chat</span>
+        </a>
+        <a href="insights.html" class="rail-btn" title="Insights">
+          <span class="rail-icon-glyph icon icon-bar-chart-01"></span>
+          <span>Insights</span>
+        </a>
+        <a href="rule-library.html" class="rail-btn active" aria-current="page" title="Rule Library">
+          <span class="rail-icon-glyph icon icon-book-open-01"></span>
+          <span>Rules</span>
+        </a>
+        <a href="#workflows" class="rail-btn" title="Workflows">
+          <span class="rail-icon-glyph icon icon-dataflow-03"></span>
+          <span>Flows</span>
+        </a>
+        <a href="#data" class="rail-btn" title="Data Sources">
+          <span class="rail-icon-glyph icon icon-database-01"></span>
+          <span>Data</span>
+        </a>
+        <div style="margin-top: auto;">
+          <a href="#settings" class="rail-btn" title="Settings">
+            <span class="rail-icon-glyph icon icon-settings-01"></span>
+            <span>Settings</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Surface: Rule Library -->
+      <main class="shell-main">
+        <div class="container" style="max-width: 1080px; padding: 4px 0 40px;">
+          <!-- Header and Filter Bar -->
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+            <div>
+              <h1 class="page-title" style="margin-bottom: 2px;">Rule Library</h1>
+              <p class="page-description">
+                Active semantic and SQL compliance policies monitored continuously across Vantara Org operations.
+              </p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <input type="search" class="form-input" placeholder="Search rules..." style="width: 200px;">
+              <select class="form-select">
+                <option>All Severities</option>
+                <option>Critical</option>
+                <option>High</option>
+                <option>Medium</option>
+              </select>
+              <button class="btn btn-sm btn-primary">+ New Rule</button>
+            </div>
+          </div>
+
+          <!-- Rule Table (Gray-box wireframe style) -->
+          <div class="card" style="padding: 0; overflow: hidden;">
+            <table class="wire-table">
+              <thead>
+                <tr>
+                  <th style="width: 32%;">Rule Name &amp; Description</th>
+                  <th style="width: 14%;">Category</th>
+                  <th style="width: 22%;">Rule Type</th>
+                  <th style="width: 14%;">Severity</th>
+                  <th style="width: 18%; text-align: right;">Trigger Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Row 1 -->
+                <tr>
+                  <td>
+                    <div style="font-weight: 600; color: var(--text); font-size: 13px;">Missing Maintenance Checklist Sign-off</div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Flags work orders closed without attached supervisor sign-off.</div>
+                  </td>
+                  <td>
+                    <span class="badge badge-muted">Compliance</span>
+                  </td>
+                  <td>
+                    <code style="font-size: 11px; color: var(--text-muted);">MULTI_STEP_SEMANTIC</code>
+                  </td>
+                  <td>
+                    <span class="badge severity-critical">Critical</span>
+                  </td>
+                  <td style="text-align: right; font-weight: 600;">
+                    142 triggers
+                  </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr>
+                  <td>
+                    <div style="font-weight: 600; color: var(--text); font-size: 13px;">Overdue PM Work Order (Asset Tier 1)</div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Triggers when preventive maintenance exceeds 7-day grace window.</div>
+                  </td>
+                  <td>
+                    <span class="badge badge-muted">Operations</span>
+                  </td>
+                  <td>
+                    <code style="font-size: 11px; color: var(--text-muted);">STRUCTURED_SQL</code>
+                  </td>
+                  <td>
+                    <span class="badge severity-high">High</span>
+                  </td>
+                  <td style="text-align: right; font-weight: 600;">
+                    89 triggers
+                  </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr>
+                  <td>
+                    <div style="font-weight: 600; color: var(--text); font-size: 13px;">Unauthorized Parameter Shift in Telemetry</div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Detects calibration variance beyond &plusmn;3.5% between consecutive shifts.</div>
+                  </td>
+                  <td>
+                    <span class="badge badge-muted">Operations</span>
+                  </td>
+                  <td>
+                    <code style="font-size: 11px; color: var(--text-muted);">MULTI_STEP_SEMANTIC</code>
+                  </td>
+                  <td>
+                    <span class="badge severity-high">High</span>
+                  </td>
+                  <td style="text-align: right; font-weight: 600;">
+                    64 triggers
+                  </td>
+                </tr>
+
+                <!-- Row 4 -->
+                <tr>
+                  <td>
+                    <div style="font-weight: 600; color: var(--text); font-size: 13px;">Coolant Pressure Threshold Drift</div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Monitors high-pressure sensor lines across coolant pumps 1 through 4.</div>
+                  </td>
+                  <td>
+                    <span class="badge badge-muted">Operations</span>
+                  </td>
+                  <td>
+                    <code style="font-size: 11px; color: var(--text-muted);">STRUCTURED_SQL</code>
+                  </td>
+                  <td>
+                    <span class="badge severity-medium">Medium</span>
+                  </td>
+                  <td style="text-align: right; font-weight: 600;">
+                    215 triggers
+                  </td>
+                </tr>
+
+                <!-- Row 5 -->
+                <tr>
+                  <td>
+                    <div style="font-weight: 600; color: var(--text); font-size: 13px;">Safety LOTO Protocol Incomplete</div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Enforces lock-out / tag-out isolation certificate before panel access.</div>
+                  </td>
+                  <td>
+                    <span class="badge badge-muted">Compliance</span>
+                  </td>
+                  <td>
+                    <code style="font-size: 11px; color: var(--text-muted);">MULTI_STEP_SEMANTIC</code>
+                  </td>
+                  <td>
+                    <span class="badge severity-critical">Critical</span>
+                  </td>
+                  <td style="text-align: right; font-weight: 600;">
+                    19 triggers
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Interactive Rule Detail Drawer (Flow 2: Rule detail + trigger history) -->
+          <div id="rule-detail-drawer" style="display: none; position: fixed; top: 0; right: 0; width: 440px; height: 100vh; background: var(--surface); border-left: 1px solid var(--border-subtle); box-shadow: -4px 0 20px rgba(0,0,0,0.08); z-index: 1000; padding: 24px; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+              <div>
+                <span class="badge severity-critical" style="font-size: 10px;">Critical Rule</span>
+                <h2 style="font-size: 16px; font-weight: 700; margin: 6px 0 2px;">Missing Maintenance Checklist Sign-off</h2>
+                <div style="font-size: 11px; color: var(--text-muted);">Policy ID: <code>RULE-COMP-9921</code> &bull; Version 1.4</div>
+              </div>
+              <button id="close-rule-drawer-btn" class="btn btn-sm" style="padding: 4px 8px;">&times;</button>
+            </div>
+
+            <!-- Rule Metadata -->
+            <div style="margin-bottom: 20px; font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+              <p>Flags work orders closed without attached supervisor sign-off. Enforces ISO 9001 compliance standards across plant operations.</p>
+              <div style="background: var(--surface-subtle); padding: 10px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-family: monospace; font-size: 11px;">
+                EVAL: work_order.closed == true AND work_order.supervisor_signature == NULL
+              </div>
+            </div>
+
+            <!-- Trigger History (Step F in Flow 2) -->
+            <div style="margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;">
+                <h3 style="font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); margin: 0;">Trigger History (Last 24h)</h3>
+                <span class="badge badge-muted" style="font-size: 10px;">142 total</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="padding: 10px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--surface-subtle); font-size: 12px;">
+                  <div style="display: flex; justify-content: space-between; font-weight: 600;">
+                    <span>10:14 AM &bull; Shift 2</span>
+                    <span style="color: var(--danger);">Flagged</span>
+                  </div>
+                  <div style="color: var(--text-muted); margin-top: 4px;">Tech #412 closed WO-9921 without supervisor sign-off. Escalated to Lead.</div>
+                </div>
+                <div style="padding: 10px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--surface-subtle); font-size: 12px;">
+                  <div style="display: flex; justify-content: space-between; font-weight: 600;">
+                    <span>08:32 AM &bull; Shift 1</span>
+                    <span style="color: var(--danger);">Flagged</span>
+                  </div>
+                  <div style="color: var(--text-muted); margin-top: 4px;">Turbopump Assembly #3 sign-off bypassed. Sent alert to compliance desk.</div>
+                </div>
+                <div style="padding: 10px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: var(--surface-subtle); font-size: 12px;">
+                  <div style="display: flex; justify-content: space-between; font-weight: 600;">
+                    <span>Yesterday 04:15 PM</span>
+                    <span style="color: var(--danger);">Flagged</span>
+                  </div>
+                  <div style="color: var(--text-muted); margin-top: 4px;">Hydraulic Press B seal inspection closed incomplete during shift change.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div style="display: flex; gap: 8px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+              <button class="btn btn-sm btn-primary" onclick="alert('Triggers acknowledged for Shift 2.');" style="flex: 1;">Acknowledge Triggers</button>
+              <button class="btn btn-sm btn-secondary" onclick="document.getElementById('rule-detail-drawer').style.display='none';">Close</button>
+            </div>
+          </div>
+
+          <!-- Wayfinding Note Block -->
+          <div style="margin-top: 28px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px; color: var(--text-muted);">
+            <strong>IA Architecture Principle:</strong> In Axon, with no micro-frontends, the <em>System / Organisation / Project</em> breadcrumb is the only wayfinding device inside the product. It remains the single source of scope rather than gaining a second navigation layer on top.
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+  <script>
+    // Wire rule rows to open Rule Detail & Trigger History drawer (Flow 2: Step E -> Step F)
+    (function () {
+      const drawer = document.getElementById('rule-detail-drawer');
+      const closeBtn = document.getElementById('close-rule-drawer-btn');
+      const rows = document.querySelectorAll('.wire-table tbody tr');
+
+      rows.forEach(row => {
+        row.style.cursor = 'pointer';
+        row.title = 'Click to view rule detail and trigger history';
+        row.addEventListener('click', () => {
+          if (drawer) drawer.style.display = 'block';
+        });
+      });
+
+      if (closeBtn && drawer) {
+        closeBtn.addEventListener('click', () => {
+          drawer.style.display = 'none';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

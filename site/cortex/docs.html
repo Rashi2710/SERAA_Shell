@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cortex — Documentation</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar: Persistent across all Cortex pages -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <!-- Wordmark with Cortex coral mark -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="product-dot dot-coral"></span>
+          <span class="brand-wordmark" style="font-size: 15px;">CORTEX</span>
+        </div>
+
+        <span class="separator" style="color: var(--border-strong); margin: 0 4px;">|</span>
+
+        <!-- System / Org / Project Scope Selector -->
+        <nav class="scope-breadcrumb" aria-label="Cortex Scope Hierarchy">
+          <span class="scope-pill">System</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill">Enterprise AI Unit</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill" style="font-weight: 600; color: var(--text);">Production Orchestration</span>
+        </nav>
+      </div>
+
+      <!-- Foundry Persistent Top Nav -->
+      <nav class="global-nav">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="build.html" class="nav-link">Build</a>
+        <a href="operate.html" class="nav-link">Observe</a>
+        <a href="manage.html" class="nav-link">Manage</a>
+        <a href="docs.html" class="nav-link active" aria-current="page">Docs</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Docs Surface -->
+    <div class="shell-body">
+      <main class="shell-main">
+        <div class="container" style="max-width: 800px; padding: 24px 0 40px;">
+          <div class="card" style="padding: 32px;">
+            <h1 class="page-title">Cortex Platform Documentation</h1>
+            <p class="page-description" style="margin-top: 8px; font-size: 14px; line-height: 1.6;">
+              Welcome to the Cortex reference guides. Learn how to architect multi-agent orchestration schemas, configure tool-use bindings, integrate Model Context Protocol (MCP) servers, and monitor latency in the Agent Control Tower.
+            </p>
+            <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-subtle); font-size: 12px; color: var(--text-muted);">
+              Reference: Covasant Agent Management Suite &bull; Unified IA Spec 2026-09
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+</body>
+</html>

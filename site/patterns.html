@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SERAA — A2UI &amp; Chat Assistance Patterns</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-left">
+        <div class="scope-breadcrumb">
+          <a href="index.html" style="color: var(--text-muted);">SERAA</a>
+          <span class="separator">/</span>
+          <span class="brand-wordmark" style="font-size: 15px;">Patterns</span>
+        </div>
+      </div>
+      <nav class="global-nav" aria-label="Patterns Navigation">
+        <a href="patterns.html" class="nav-link" aria-current="page">A2UI &amp; Chat</a>
+      </nav>
+      <div class="app-header-right">
+        <div class="org-badge"><span class="org-badge-dot"></span><span class="org-badge-name">Acme Corp</span></div>
+      </div>
+    </header>
+
+    <main class="shell-main">
+      <div class="container" style="padding: var(--space-5xl) var(--space-4xl); display:flex; flex-direction:column; gap: var(--space-6xl);">
+
+        <div>
+          <h1 class="page-title">A2UI &amp; Chat Assistance</h1>
+          <p class="page-description">
+            Agent status, loaders, and assistant-generated UI. Built on the same Covasant tokens as the
+            rest of the suite &mdash; this layer adds interaction patterns, not new colors or type.
+          </p>
+        </div>
+
+        <section>
+          <div class="section-header">
+            <span class="section-title">Agent states</span>
+            <span class="section-sub">Shown while an agent is working</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap: var(--space-xl); align-items:center;">
+            <span class="agent-status"><span class="agent-sphere"></span><span class="agent-label">Searching…</span></span>
+            <span class="agent-status"><span class="agent-orb agent-orb-sm"></span><span class="agent-label">Thinking…</span></span>
+            <span class="agent-status"><span class="agent-sphere"></span><span class="agent-label">Solving…</span></span>
+            <span class="agent-status"><span class="agent-sphere"></span><span class="agent-label">Working…</span></span>
+            <span class="agent-status"><span class="agent-sphere agent-orb-sm"></span><span class="agent-label">Agent planning…</span></span>
+            <span class="agent-status"><span class="agent-orb agent-orb-sm"></span><span class="agent-label">Agent thinking…</span></span>
+            <span class="agent-status"><span class="agent-sphere agent-orb-sm"></span><span class="agent-label">Agent listening…</span></span>
+            <span class="agent-status"><span class="agent-sphere agent-orb-sm"></span><span class="agent-label">Agent shaping…</span></span>
+            <span class="agent-status"><span class="agent-sphere agent-orb-lg"></span><span class="agent-label">Composing…</span></span>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-header">
+            <span class="section-title">Inline loaders</span>
+            <span class="section-sub">Inside a line of text, no pill</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap: var(--space-xl); align-items:flex-start;">
+            <span class="agent-status-inline">
+              <span class="icon icon-stars-01 star-loader"></span>
+              <span class="agent-label">Pulling the 19 Aug processing summary…</span>
+            </span>
+            <span class="agent-status-inline">
+              <span class="agent-orb agent-orb-sm"></span>
+              <span class="agent-label">Thinking through the reconciliation…</span>
+            </span>
+            <span class="agent-status-inline">
+              <span class="agent-sphere agent-orb-sm"></span>
+              <span class="agent-label">Searching related filings…</span>
+            </span>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-header">
+            <span class="section-title">Settled states</span>
+            <span class="section-sub">Work finished &mdash; same marks, motion stopped</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap: var(--space-xl); align-items:center;">
+            <span class="agent-status"><span class="agent-sphere agent-sphere-settled"></span><span>Answer ready</span></span>
+            <span class="agent-status"><span class="agent-orb agent-orb-settled agent-orb-sm"></span><span>Reconciled</span></span>
+            <span class="agent-status"><span class="agent-sphere agent-sphere-settled agent-orb-lg"></span><span>Draft composed</span></span>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-header">
+            <span class="section-title">Generated UI (A2UI)</span>
+            <span class="section-sub">Fields the assistant builds from the user&rsquo;s message</span>
+          </div>
+          <div class="a2ui-card" style="max-width: 420px;">
+            <div class="a2ui-card-header">
+              <span class="icon icon-stars-01 icon-sm" style="color: var(--accent);"></span>
+              <span>SERAA built this from your message</span>
+            </div>
+            <div class="a2ui-field">
+              <span class="a2ui-field-label">Leave type</span>
+              <div class="a2ui-field-control">
+                <span>Sick leave</span>
+                <span class="icon icon-chevron-down"></span>
+              </div>
+              <span class="a2ui-field-hint">Balance: 6 days &middot; <span class="a2ui-from-message">From your message</span></span>
+            </div>
+            <div style="display:flex; gap: var(--space-lg);">
+              <button type="button" class="btn btn-primary">Submit request</button>
+              <button type="button" class="btn">Edit</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+  <script src="shared/shell.js"></script>
+</body>
+</html>

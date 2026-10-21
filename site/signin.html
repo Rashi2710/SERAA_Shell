@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERAA — Sign In</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body class="auth-page-wrapper">
+  <div class="auth-split-layout">
+    <!-- Left Panel: Platform Introduction (SERAA umbrella, not single product) -->
+    <div class="auth-left-panel">
+      <div class="brand-wordmark" style="font-size: 18px;">
+        SERAA
+        <span class="brand-badge">Platform</span>
+      </div>
+
+      <div class="auth-left-content">
+        <h1 class="auth-platform-title">Unified Enterprise Intelligence &amp; Agent Platform</h1>
+        <p class="auth-platform-tagline">
+          One central gateway across sensing, reasoning, memory, and autonomous action. Discover, launch, and govern your intelligent workflows.
+        </p>
+
+        <div class="auth-suite-highlights">
+          <div class="auth-highlight-item">
+            <span class="product-dot dot-teal"></span>
+            <span class="auth-highlight-name">Pulze</span>
+            <span class="auth-highlight-desc">Sense — meetings, market signals, and liquidity analysis.</span>
+          </div>
+          <div class="auth-highlight-item">
+            <span class="product-dot dot-purple"></span>
+            <span class="auth-highlight-name">Axon</span>
+            <span class="auth-highlight-desc">Reason — rule libraries, KPI confidence feeds, and compliance.</span>
+          </div>
+          <div class="auth-highlight-item">
+            <span class="product-dot dot-pink"></span>
+            <span class="auth-highlight-name">Synapse</span>
+            <span class="auth-highlight-desc">Remember — adaptive enterprise memory layers with revision promotion.</span>
+          </div>
+          <div class="auth-highlight-item">
+            <span class="product-dot dot-coral"></span>
+            <span class="auth-highlight-name">Cortex</span>
+            <span class="auth-highlight-desc">Act — design, orchestrate, test, and control autonomous agents.</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size: 12px; color: var(--text-subtle);">
+        Covasant Enterprise Systems &bull; Architecture Specification 2026-09
+      </div>
+    </div>
+
+    <!-- Right Panel: Sign-In Form & SSO -->
+    <div class="auth-right-panel">
+      <div class="auth-form-card">
+        <h2 class="auth-form-title">Sign in to SERAA</h2>
+        <p class="auth-form-subtitle">Choose your organization tenant to proceed</p>
+
+        <form action="handoff.html" method="GET">
+          <!-- Organisation / Tenant Dropdown -->
+          <div class="form-group">
+            <label class="form-label" for="tenant-select">Organisation / Tenant</label>
+            <select id="tenant-select" class="form-select" style="width: 100%;" required>
+              <option value="acme" selected>Acme Corp (Primary Production)</option>
+              <option value="northwind">Northwind Traders Global</option>
+              <option value="global">Global Financial Services</option>
+            </select>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label class="form-label" for="email-input">Email Address</label>
+            <input
+              id="email-input"
+              type="email"
+              class="form-input"
+              placeholder="name@company.com"
+              value="rashi@acme.com"
+              required
+              style="width: 100%;"
+            >
+          </div>
+
+          <!-- Password Field -->
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <label class="form-label" for="password-input">Password</label>
+              <a href="#forgot-password" style="font-size: 11px; color: var(--text-muted);">Forgot?</a>
+            </div>
+            <input
+              id="password-input"
+              type="password"
+              class="form-input"
+              placeholder="••••••••"
+              value="secret123"
+              required
+              style="width: 100%;"
+            >
+          </div>
+
+          <!-- Sign In Button -->
+          <div style="margin-top: 20px;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 9px 16px;">
+              Sign in &rarr;
+            </button>
+          </div>
+        </form>
+
+        <!-- Divider -->
+        <div class="auth-divider">
+          <span>or sign in with SSO</span>
+        </div>
+
+        <!-- SSO Buttons: Plain text labels, gray-box buttons -->
+        <div class="sso-grid">
+          <a href="handoff.html" class="btn sso-btn">Continue with AWS IAM Identity</a>
+          <a href="handoff.html" class="btn sso-btn">Continue with Microsoft Entra ID</a>
+          <a href="handoff.html" class="btn sso-btn">Continue with Google Workspace</a>
+        </div>
+
+        <div style="margin-top: 24px; text-align: center; font-size: 12px; color: var(--text-muted);">
+          Need an account? <a href="#request-access">Contact your tenant admin</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="shared/shell.js"></script>
+</body>
+</html>

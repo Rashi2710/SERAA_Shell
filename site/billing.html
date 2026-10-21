@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERAA — Billing &amp; Usage Rollup</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <a href="index.html" class="app-switcher" title="SERAA Platform Switcher">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+        <div class="scope-breadcrumb">
+          <a href="index.html" class="brand-wordmark" style="font-size: 15px;">SERAA</a>
+          <span class="separator">/</span>
+          <span style="font-weight: 600; color: var(--text);">Billing &amp; Usage</span>
+        </div>
+      </div>
+
+      <nav class="global-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="docs.html" class="nav-link">Docs</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="org-badge" title="Organization">
+          <span class="org-badge-dot"></span>
+          <span class="org-badge-name">Acme Corp</span>
+        </div>
+
+        <!-- Account Menu with Dropdown -->
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="billing.html" class="account-dropdown-item" style="font-weight: 600; color: var(--accent);">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-accent" style="font-size: 10px;">Active</span>
+            </a>
+            <a href="assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body -->
+    <div class="shell-body">
+      <main class="shell-main">
+        <div class="container" style="max-width: 1040px; padding: 16px 0 60px;">
+          <!-- Page Header -->
+          <div style="margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: baseline; justify-content: space-between;">
+              <div>
+                <h1 class="page-title">Billing &amp; Usage Rollup</h1>
+                <p class="page-description">
+                  Aggregated cross-product spend summary and deep-links into product-specific administration portals.
+                </p>
+              </div>
+              <span class="badge badge-muted">Admin Only &bull; Read/Write</span>
+            </div>
+          </div>
+
+          <!-- Top Section: Labeled Values per Prompt -->
+          <div class="billing-summary-grid">
+            <div class="card">
+              <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--text-muted);">This Cycle's Spend</span>
+              <span style="font-size: 26px; font-weight: 800; color: var(--text); margin-top: 4px;">$5,260.80</span>
+              <span style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Billing cycle: Sep 01 – Sep 30, 2026</span>
+            </div>
+
+            <div class="card">
+              <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--text-muted);">Next Invoice Date</span>
+              <span style="font-size: 26px; font-weight: 800; color: var(--text); margin-top: 4px;">Oct 01, 2026</span>
+              <span style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Automated corporate debit</span>
+            </div>
+
+            <div class="card">
+              <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--text-muted);">Payment Method</span>
+              <span style="font-size: 18px; font-weight: 700; color: var(--text); margin-top: 10px;">Corporate Net-30</span>
+              <span style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">Visa ending in &bull;&bull;&bull;&bull; 4242 (Backup)</span>
+            </div>
+          </div>
+
+          <!-- Per-Product Table per prompt -->
+          <div class="card" style="padding: 0; overflow: hidden; margin-bottom: 28px;">
+            <div class="card-header" style="padding: 16px 20px 12px; border-bottom: 1px solid var(--border-subtle);">
+              <div>
+                <h2 class="card-title">Product Entitlement &amp; Cost Table</h2>
+                <span class="card-subtitle">Per-product billing enforcement stays standalone; links route to product consoles</span>
+              </div>
+            </div>
+            <table class="wire-table">
+              <thead>
+                <tr>
+                  <th style="width: 28%;">Product</th>
+                  <th style="width: 20%;">Plan / Tier</th>
+                  <th style="width: 20%;">Consumption this cycle</th>
+                  <th style="width: 14%;">Cost</th>
+                  <th style="width: 18%; text-align: right;">Manage</th>
+                </tr>
+              </thead>
+              <tbody id="billing-rows"></tbody>
+            </table>
+          </div>
+
+          <!-- Architecture Principle Stakeholder Box -->
+          <div style="padding: 16px 20px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px; color: var(--text-muted); line-height: 1.6;">
+            <strong>IA Architecture Principle:</strong> Billing enforcement remains standalone per product today, mirroring Scope-Based Access Control (SBAC). The SERAA Billing &amp; Usage surface is a consolidated rollup and a doorway; clicking <em>Manage</em> links directly into each product's internal administrative screen (Cortex's <code>manage.html</code> or Pulze's <code>cost-insights.html</code>).
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="shared/shell.js"></script>
+</body>
+</html>

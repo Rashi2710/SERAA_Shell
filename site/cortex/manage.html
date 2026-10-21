@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cortex — Manage</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar: Persistent across all Cortex pages -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <!-- Wordmark with Cortex coral mark -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="product-dot dot-coral"></span>
+          <span class="brand-wordmark" style="font-size: 15px;">CORTEX</span>
+        </div>
+
+        <span class="separator" style="color: var(--border-strong); margin: 0 4px;">|</span>
+
+        <!-- System / Org / Project Scope Selector -->
+        <nav class="scope-breadcrumb" aria-label="Cortex Scope Hierarchy">
+          <span class="scope-pill">System</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill">Enterprise AI Unit</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill" style="font-weight: 600; color: var(--text);">Production Orchestration</span>
+        </nav>
+      </div>
+
+      <!-- Foundry Persistent Top Nav -->
+      <nav class="global-nav">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="build.html" class="nav-link">Build</a>
+        <a href="operate.html" class="nav-link">Observe</a>
+        <a href="manage.html" class="nav-link active" aria-current="page">Manage</a>
+        <a href="docs.html" class="nav-link">Docs</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Left Nav + Manage Surface -->
+    <div class="shell-body">
+      <!-- Foundry Manage Left Nav -->
+      <aside class="shell-sidebar">
+        <div class="nav-group">
+          <div class="nav-group-title">Governance &amp; Setup</div>
+          <a href="#quota" class="nav-link">
+            <span>Quota &amp; Capacity</span>
+          </a>
+          <a href="manage.html" class="nav-link active" aria-current="page">
+            <span>Project Details</span>
+          </a>
+          <a href="#users" class="nav-link">
+            <span>Users &amp; Roles</span>
+          </a>
+          <a href="#connected-resources" class="nav-link">
+            <span>Connected Resources</span>
+          </a>
+        </div>
+
+        <div class="nav-group" style="margin-top: 16px;">
+          <div class="nav-group-title">Converged Modules</div>
+          <a href="#test-bench" class="nav-link">
+            <span>Agent Test Bench</span>
+          </a>
+          <a href="#registry" class="nav-link">
+            <span>Agent Registry</span>
+          </a>
+          <a href="#license" class="nav-link">
+            <span>License Management</span>
+          </a>
+          <a href="#governance" class="nav-link">
+            <span>Data Security (EDMS)</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Area: Project Details & Users Table -->
+      <main class="shell-main">
+        <div class="container" style="max-width: 1040px; padding: 4px 0 40px;">
+          <!-- Section Header -->
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+            <div>
+              <h1 class="page-title" style="margin-bottom: 2px;">Project Details</h1>
+              <p class="page-description">
+                Configuration properties, tenant bindings, and team member permissions for Production Orchestration.
+              </p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn btn-sm btn-secondary">Edit Settings</button>
+              <button class="btn btn-sm btn-primary">+ Add Member</button>
+            </div>
+          </div>
+
+          <!-- Project Properties Card -->
+          <div class="card" style="margin-bottom: 24px;">
+            <div class="card-header">
+              <h2 class="card-title">Scope &amp; Resource Metadata</h2>
+              <span class="badge badge-active">Configured</span>
+            </div>
+            <div class="card-body">
+              <div class="grid grid-2" style="gap: 16px;">
+                <div>
+                  <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Project Name</div>
+                  <div style="font-weight: 600; font-size: 13px; margin-top: 2px;">Production Orchestration Mesh</div>
+                </div>
+                <div>
+                  <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Organisation Unit</div>
+                  <div style="font-weight: 600; font-size: 13px; margin-top: 2px;">Enterprise AI Unit (Acme Corp)</div>
+                </div>
+                <div>
+                  <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Resource Group</div>
+                  <div style="font-weight: 600; font-size: 13px; margin-top: 2px;">rg-cortex-prod-us-east-1</div>
+                </div>
+                <div>
+                  <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Created Date</div>
+                  <div style="font-weight: 600; font-size: 13px; margin-top: 2px;">2026-03-12 (Updated 2026-09-18)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Users & Permissions Table -->
+          <div id="users" class="card" style="padding: 0; overflow: hidden; margin-bottom: 24px;">
+            <div class="card-header" style="padding: 16px 18px 12px; border-bottom: 1px solid var(--border-subtle);">
+              <div>
+                <h2 class="card-title">Assigned Users</h2>
+                <span class="card-subtitle">Identities provisioned under Cortex SBAC</span>
+              </div>
+              <span class="badge badge-muted">4 Active Accounts</span>
+            </div>
+            <table class="wire-table">
+              <thead>
+                <tr>
+                  <th>User Name</th>
+                  <th>Email</th>
+                  <th>Cortex Role</th>
+                  <th>Access Type</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight: 600;">Rashi Saxena</td>
+                  <td>rashi@acme.com</td>
+                  <td><span class="badge badge-accent">Platform Admin</span></td>
+                  <td>Read / Write / Deploy</td>
+                  <td style="text-align: right;"><a href="#users" class="btn btn-sm">Manage</a></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 600;">Devin Chen</td>
+                  <td>d.chen@acme.com</td>
+                  <td><span class="badge badge-muted">Agent Developer</span></td>
+                  <td>Authoring / Test Bench</td>
+                  <td style="text-align: right;"><a href="#users" class="btn btn-sm">Manage</a></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 600;">Sarah Miller</td>
+                  <td>s.miller@acme.com</td>
+                  <td><span class="badge badge-muted">Compliance Auditor</span></td>
+                  <td>Read Only (EDMS / Logs)</td>
+                  <td style="text-align: right;"><a href="#users" class="btn btn-sm">Manage</a></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 600;">Systems Service Principal</td>
+                  <td>sp-cortex-worker@acme.iam</td>
+                  <td><span class="badge badge-muted">Service Account</span></td>
+                  <td>Automated Execution</td>
+                  <td style="text-align: right;"><a href="#users" class="btn btn-sm">Manage</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Converged Module: Agent Test Bench (Flow 4: Step F) -->
+          <div id="test-bench" class="card" style="margin-bottom: 24px;">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Agent Test Bench</h2>
+                <span class="card-subtitle">Foundry Converged Module &bull; Validation &amp; Sandboxed Execution</span>
+              </div>
+              <span style="display:flex; align-items:center; gap: var(--space-lg);">
+                <span class="badge badge-active">Active Sandbox</span>
+                <a href="build.html" class="btn btn-sm" data-trail="Build&gt;Agent Work Bench">&larr; Back to agent</a>
+              </span>
+            </div>
+            <div class="card-body">
+              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+                Evaluate agent tool bindings, mock memory retrieval latency, and run regression test suites prior to registry publication.
+              </p>
+              <div style="background: var(--surface-subtle); padding: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                  <span style="font-weight: 600;">Test Target: Customer Support Triage Agent (v1.4)</span>
+                  <span style="color: var(--success); font-weight: 600;">&bull; 100% Tests Passed (18/18)</span>
+                </div>
+                <div style="color: var(--text-muted);">
+                  Latencies: P50: 240ms &bull; P99: 680ms &bull; Zero schema validation errors detected.
+                </div>
+              </div>
+            </div>
+            <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center;">
+              <button class="btn btn-sm btn-secondary" onclick="alert('Running test suite simulation...');">Re-run Sandbox Suite</button>
+              <a href="#registry" class="btn btn-sm btn-primary">Proceed to Agent Registry &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Converged Module: Agent Registry (Flow 4: Step G) -->
+          <div id="registry" class="card" style="margin-bottom: 24px;">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Agent Registry</h2>
+                <span class="card-subtitle">Foundry Converged Module &bull; Versioned Artifacts &amp; Production Promotion</span>
+              </div>
+              <span class="badge badge-muted">4 Signed Builds</span>
+            </div>
+            <div class="card-body">
+              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+                Central repository of immutable, signed agent manifests ready for live deployment into the Control Tower mesh.
+              </p>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: var(--surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px;">
+                  <div>
+                    <div style="font-weight: 600;">Customer Support Triage Agent &bull; v1.4</div>
+                    <div style="color: var(--text-muted); font-size: 11px;">Signed by Rashi Saxena &bull; Tested via Test Bench</div>
+                  </div>
+                  <a href="operate.html" class="btn btn-sm btn-primary">Deploy to Control Tower &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Converged Module: License Management (Flow 6: Step E) -->
+          <div id="license" class="card" style="margin-bottom: 24px;">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">License Management</h2>
+                <span class="card-subtitle">Foundry Converged Module &bull; Tier Allocation &amp; Enterprise Capacity</span>
+              </div>
+              <span class="badge badge-active">Enterprise Tier</span>
+            </div>
+            <div class="card-body">
+              <div class="grid grid-3" style="gap: 12px; margin-bottom: 12px;">
+                <div style="padding: 10px; background: var(--surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                  <div style="font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Agent Instances</div>
+                  <div style="font-size: 18px; font-weight: 700; margin-top: 4px;">14 / 25 Used</div>
+                </div>
+                <div style="padding: 10px; background: var(--surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                  <div style="font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Token Allocation</div>
+                  <div style="font-size: 18px; font-weight: 700; margin-top: 4px;">18.4M / 50M</div>
+                </div>
+                <div style="padding: 10px; background: var(--surface-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                  <div style="font-size: 10px; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Cost Cap Status</div>
+                  <div style="font-size: 18px; font-weight: 700; color: var(--success); margin-top: 4px;">Normal (68%)</div>
+                </div>
+              </div>
+              <div style="font-size: 11px; color: var(--text-muted);">
+                Managed under Enterprise Master Services Agreement. To adjust token caps or add cluster node licenses, contact enterprise admin.
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="../billing.html" class="btn btn-sm btn-secondary">&larr; Back to SERAA Billing Rollup</a>
+            </div>
+          </div>
+
+          <!-- Architecture Note -->
+          <div style="margin-top: 24px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+            <strong>IA Architecture Principle:</strong> Under the Foundry model, Agent Registry, Test Bench, System Configuration, License Management, Tenant Administration, and Data Security &amp; Governance converge under <em>Manage</em>, mirroring Foundry's consolidated management hub.
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+</body>
+</html>

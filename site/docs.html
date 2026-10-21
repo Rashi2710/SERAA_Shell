@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERAA — Documentation</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <a href="index.html" class="app-switcher" title="SERAA Platform Switcher">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+        <div class="scope-breadcrumb">
+          <a href="index.html" class="brand-wordmark" style="font-size: 15px;">SERAA</a>
+          <span class="separator">/</span>
+          <span style="font-weight: 600; color: var(--text);">Documentation</span>
+        </div>
+      </div>
+
+      <nav class="global-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="docs.html" class="nav-link active" aria-current="page">Docs</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="org-badge" title="Organization">
+          <span class="org-badge-dot"></span>
+          <span class="org-badge-name">Acme Corp</span>
+        </div>
+
+        <!-- Account Menu with Dropdown -->
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="billing.html" class="account-dropdown-item" style="font-weight: 600; color: var(--accent);">
+              <span>Documentation</span>
+              <span class="badge badge-accent" style="font-size: 10px;">Active</span>
+            </a>
+            <a href="assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body -->
+    <div class="shell-body">
+      <main class="shell-main">
+        <div class="container" style="max-width: 1060px; padding: 12px 0 48px;">
+
+          <h1 class="page-title">Documentation</h1>
+          <p class="page-description" style="margin-bottom: var(--space-4xl);">
+            Platform documentation for the whole SERAA shell. Each product also ships its own
+            in-product docs, linked from its section below.
+          </p>
+
+          <!-- Platform-level topics: things that span every product -->
+          <section style="margin-bottom: 44px;">
+            <div class="section-header">
+              <h2 class="section-title">Platform</h2>
+              <span class="section-sub">Applies across every product</span>
+            </div>
+            <div class="grid grid-3">
+              <a class="card card-clickable" href="#getting-started">
+                <span class="card-title">Getting started</span>
+                <div class="card-body">Signing in, tenant selection, and what the entitlement handoff does.</div>
+              </a>
+              <a class="card card-clickable" href="#access">
+                <span class="card-title">Access &amp; SBAC</span>
+                <div class="card-body">Scope-Based Access Control stays standalone per product. How scopes resolve.</div>
+              </a>
+              <a class="card card-clickable" href="#licensing">
+                <span class="card-title">Licensing</span>
+                <div class="card-body">What "licensed", "not licensed" and "coming soon" mean, and how to request access.</div>
+              </a>
+              <a class="card card-clickable" href="billing.html">
+                <span class="card-title">Billing &amp; usage</span>
+                <div class="card-body">The cross-product rollup, consumption by sub-product, and per-product consoles.</div>
+              </a>
+              <a class="card card-clickable" href="assure.html">
+                <span class="card-title">Assure &amp; governance</span>
+                <div class="card-body">Guardrails, risk items and the control-plane view across the suite.</div>
+              </a>
+              <a class="card card-clickable" href="#tabs">
+                <span class="card-title">Tabs &amp; navigation</span>
+                <div class="card-body">Why each product opens in its own tab, and how to get back to the shell.</div>
+              </a>
+            </div>
+          </section>
+
+          <!-- Per-product documentation -->
+          <section style="margin-bottom: 44px;">
+            <div class="section-header">
+              <h2 class="section-title">By product</h2>
+              <span class="section-sub">In-product documentation</span>
+            </div>
+            <div class="grid grid-2" id="docs-products"
+                 style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); max-width: 1120px;"></div>
+          </section>
+
+          <!-- Reference -->
+          <section>
+            <div class="section-header">
+              <h2 class="section-title">Reference</h2>
+              <span class="section-sub">Deeper material</span>
+            </div>
+            <div class="card">
+              <table class="wire-table">
+                <thead><tr><th style="width:28%">Topic</th><th>What it covers</th><th style="width:18%;text-align:right">Where</th></tr></thead>
+                <tbody>
+                  <tr><td>MCP servers</td><td>Exposing licensed products to agents as tools</td>
+                      <td style="text-align:right"><a href="cortex/build-mcp.html">Cortex &rarr; MCP Hub</a></td></tr>
+                  <tr><td>Agent configuration</td><td>Model, instructions, tools, memory and knowledge bases</td>
+                      <td style="text-align:right"><a href="cortex/build-agent.html">Cortex &rarr; Build</a></td></tr>
+                  <tr><td>Memory scopes</td><td>Adaptive layers, revision promotion and sharing between agents</td>
+                      <td style="text-align:right"><a href="synapse/workspace.html">Synapse</a></td></tr>
+                  <tr><td>Rule libraries</td><td>Authoring rules, confidence bands and trigger history</td>
+                      <td style="text-align:right"><a href="axon/rule-library.html">Axon</a></td></tr>
+                  <tr><td>Design system</td><td>Tokens, icons, components and the A2UI patterns</td>
+                      <td style="text-align:right"><a href="patterns.html">Patterns</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+        </div>
+      </main>
+</main>
+    </div>
+  </div>
+
+  <script src="shared/shell.js"></script>
+</body>
+</html>

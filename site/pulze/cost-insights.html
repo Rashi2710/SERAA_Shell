@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Pulze — Cost Insights</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <div class="scope-breadcrumb">
+          <span class="product-dot dot-teal" style="margin-right: 2px;"></span>
+          <span class="brand-wordmark" style="font-size: 14px;">Sales Pulze</span>
+          <span class="separator">/</span>
+          <span style="font-weight: 600; color: var(--text);">Administration</span>
+        </div>
+      </div>
+
+      <div class="app-header-right">
+        <div class="org-badge" title="Organization">
+          <span class="org-badge-dot"></span>
+          <span class="org-badge-name">Acme Corp</span>
+        </div>
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sub-Product Strip -->
+    <div class="sub-product-strip">
+      <div class="scope-breadcrumb">
+        <a href="index.html" style="color: var(--text-muted);">&larr; Pulze Suite Catalog</a>
+        <span class="separator">/</span>
+        <a href="sales/intel-hub.html" style="color: var(--text-muted);">Sales Pulze</a>
+        <span class="separator">/</span>
+        <span style="font-weight: 600; color: var(--text);">Cost Insights</span>
+      </div>
+      <div class="sub-product-switcher">
+        <a href="sales/intel-hub.html" class="sub-product-tab active">Sales</a>
+        <a href="sales/intel-hub.html#market-pulze" class="sub-product-tab">Market</a>
+        <a href="sales/intel-hub.html#liquidity-pulze" class="sub-product-tab">Liquidity</a>
+      </div>
+    </div>
+
+    <!-- Shell Body -->
+    <div class="shell-body">
+      <main class="shell-main">
+        <div class="container" style="max-width: 960px; padding: 12px 0 40px;">
+          <!-- Section Header -->
+          <div style="margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <h1 class="page-title">Cost Insights</h1>
+                <p class="page-description">Per-product consumption analytics and meeting transcription cost allocation.</p>
+              </div>
+              <a href="../billing.html" class="btn btn-sm btn-secondary">&larr; Back to SERAA Billing Rollup</a>
+            </div>
+          </div>
+
+          <!-- 3 Dummy Cost-by-Meeting Stats per prompt -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-label">Cost this Cycle</span>
+              <span class="metric-value">$1,840.00</span>
+              <span class="metric-delta">&bull; 120 seats active</span>
+              <span class="metric-caption">Base subscription + transcript overages</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Average Cost per Meeting</span>
+              <span class="metric-value">$5.90</span>
+              <span class="metric-delta" style="color: var(--success);">&darr; 8% vs prior month</span>
+              <span class="metric-caption">Based on 312 transcribed sessions</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Speech-to-Text Ingestion Hours</span>
+              <span class="metric-value">248.5 hrs</span>
+              <span class="metric-delta">&bull; 82% of 300hr quota</span>
+              <span class="metric-caption">Whisper Large v3 pipeline</span>
+            </div>
+          </div>
+
+          <!-- Meeting Cost Breakdown Card -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Meeting Tier Cost Allocation</h2>
+              <span class="badge badge-muted">Current Cycle</span>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <table class="wire-table">
+                <thead>
+                  <tr>
+                    <th>Department / Segment</th>
+                    <th>Meetings Processed</th>
+                    <th>Average Duration</th>
+                    <th style="text-align: right;">Total Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight: 600;">Strategic Enterprise Sales</td>
+                    <td>142 meetings</td>
+                    <td>48 mins</td>
+                    <td style="text-align: right; font-weight: 600;">$837.80</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">Customer Success &amp; Renewals</td>
+                    <td>98 meetings</td>
+                    <td>35 mins</td>
+                    <td style="text-align: right; font-weight: 600;">$578.20</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">Mid-Market Inbound AE</td>
+                    <td>72 meetings</td>
+                    <td>28 mins</td>
+                    <td style="text-align: right; font-weight: 600;">$424.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Architecture Note -->
+          <div style="margin-top: 24px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+            <strong>IA Architecture Principle:</strong> Billing enforcement stays standalone per product for now. SERAA's top-level Billing tab is a rollup and a set of doors; clicking <em>Manage</em> in the Pulze row deep-links into this product-scoped Cost Insights console.
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+</body>
+</html>

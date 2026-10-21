@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERAA — Pulze Suite</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+        <div class="scope-breadcrumb">
+          <a href="../index.html" style="color: var(--text-muted);">SERAA</a>
+          <span class="separator">/</span>
+          <span class="brand-wordmark" style="font-size: 15px;">Pulze</span>
+        </div>
+      </div>
+
+      <!-- Top sub-navigation for Pulze -->
+      <nav class="global-nav" aria-label="Pulze Navigation">
+        <a href="index.html" class="nav-link" aria-current="page">Catalog</a>
+        <a href="manage.html" class="nav-link">Pulze SBAC &amp; Admin</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="org-badge" title="Organization">
+          <span class="org-badge-dot"></span>
+          <span class="org-badge-name">Acme Corp</span>
+        </div>
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body -->
+    <div class="shell-body">
+      <main class="shell-main">
+        <div class="container" style="max-width: 980px; padding: 16px 0 40px;">
+          <!-- Pulze Header -->
+          <div style="margin-bottom: 24px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="product-dot dot-teal" style="width: 12px; height: 12px;"></span>
+                <h1 class="page-title" style="margin-bottom: 0;">Pulze Intelligence Suite</h1>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="badge badge-active">1 of 3 Subscribed</span>
+                <a href="manage.html" class="btn btn-sm btn-secondary">Manage Pulze SBAC &rarr;</a>
+              </div>
+            </div>
+            <p class="page-description">
+              Modular sensing intelligence across enterprise revenue and operations. Clients can subscribe to one or two products only, or the full unified suite. Each microfrontend launches in its own isolated tab.
+            </p>
+          </div>
+
+          <!-- Subscription Filter Tabs -->
+          <div class="category-nav-tabs" style="margin-bottom: 24px;">
+            <button type="button" class="category-tab-btn active" data-filter="all">All Products (3)</button>
+            <button type="button" class="category-tab-btn" data-filter="subscribed">Subscribed / Licensed (1)</button>
+            <button type="button" class="category-tab-btn" data-filter="addons">Available Add-ons (2)</button>
+          </div>
+
+          <!-- Pulze Sub-Catalog Grid: 3 Cards -->
+          <div class="grid grid-3" id="pulze-products-grid">
+            <!-- 1. Sales Pulze (Subscribed) -->
+            <div class="card pulze-product-card" data-category="subscribed">
+              <div class="card-header">
+                <div>
+                  <h2 class="card-title">Sales Pulze</h2>
+                  <span class="card-subtitle">Field intelligence &amp; meeting repository</span>
+                </div>
+                <span class="badge badge-active">Active</span>
+              </div>
+              <div class="card-body">
+                Analyze executive meetings, extract deal risks, track buyer sentiment trends, and drive action items across field accounts.
+              </div>
+              <div class="card-footer">
+                <span class="badge badge-muted">Intel Hub &bull; 45 Seats</span>
+                <a href="sales/intel-hub.html" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Launch in New Tab &#x2197;</a>
+              </div>
+            </div>
+
+            <!-- 2. Market Pulze (Add-on License) -->
+            <div class="card pulze-product-card" data-category="addons">
+              <div class="card-header">
+                <div>
+                  <h2 class="card-title">Market Pulze</h2>
+                  <span class="card-subtitle">Competitor signals &amp; market sentiment</span>
+                </div>
+                <span class="badge badge-muted">Not Subscribed</span>
+              </div>
+              <div class="card-body">
+                Ingest competitor product shifts, public pricing alerts, and executive market movements into automated battlecards.
+              </div>
+              <div class="card-footer">
+                <span class="badge badge-muted">Add-on License</span>
+                <a href="../billing.html" class="btn btn-sm btn-secondary">Request License &rarr;</a>
+              </div>
+            </div>
+
+            <!-- 3. Liquidity Pulze (Add-on License) -->
+            <div class="card pulze-product-card" data-category="addons">
+              <div class="card-header">
+                <div>
+                  <h2 class="card-title">Liquidity Pulze</h2>
+                  <span class="card-subtitle">Treasury &amp; cash flow radar</span>
+                </div>
+                <span class="badge badge-muted">Not Subscribed</span>
+              </div>
+              <div class="card-body">
+                Real-time treasury radar, working capital risk monitoring, cash collection predictive curves, and debt covenant alerts.
+              </div>
+              <div class="card-footer">
+                <span class="badge badge-muted">Add-on License</span>
+                <a href="../billing.html" class="btn btn-sm btn-secondary">Request License &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Management & SBAC Callout Banner -->
+          <div style="margin-top: 36px; padding: 20px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+            <div>
+              <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Standalone Pulze SBAC &amp; Microfrontend Console</div>
+              <div style="font-size: 12px; color: var(--text-muted); line-height: 1.5; max-width: 650px;">
+                Scope-Based Access Control (SBAC) for Pulze lives independently inside this product: configure territory assignments (Tenant &rsaquo; Region &rsaquo; Territory), sales roles (VP Sales, AE, Deal Desk), and ingest real-time CRM &amp; call audio feeds.
+              </div>
+            </div>
+            <a href="manage.html" class="btn btn-primary">Open Pulze SBAC &rarr;</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+  <script>
+    // Modular subscription tab filtering
+    document.querySelectorAll('.category-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.category-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.pulze-product-card').forEach(card => {
+          if (filter === 'all') {
+            card.style.display = 'flex';
+          } else if (filter === 'subscribed') {
+            card.style.display = card.getAttribute('data-category') === 'subscribed' ? 'flex' : 'none';
+          } else if (filter === 'addons') {
+            card.style.display = card.getAttribute('data-category') === 'addons' ? 'flex' : 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

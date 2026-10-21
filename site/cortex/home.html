@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERAA — Cortex</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar: Persistent across all Cortex pages -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <!-- Wordmark with Cortex coral mark -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="product-dot dot-coral"></span>
+          <span class="brand-wordmark" style="font-size: 15px;">CORTEX</span>
+        </div>
+
+        <span class="separator" style="color: var(--border-strong); margin: 0 4px;">|</span>
+
+        <!-- System / Org / Project Scope Selector -->
+        <nav class="scope-breadcrumb" aria-label="Cortex Scope Hierarchy">
+          <span class="scope-pill">System</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill">Enterprise AI Unit</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill" style="font-weight: 600; color: var(--text);">Production Orchestration</span>
+        </nav>
+      </div>
+
+      <!-- Foundry Persistent Top Nav -->
+      <nav class="global-nav">
+        <a href="home.html" class="nav-link active" aria-current="page">Home</a>
+        <a href="build.html" class="nav-link">Build</a>
+        <a href="operate.html" class="nav-link">Observe</a>
+        <a href="manage.html" class="nav-link">Manage</a>
+        <a href="docs.html" class="nav-link">Docs</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Catalog Screen -->
+    <div class="shell-body">
+      <main class="shell-main">
+        <div class="container" style="max-width: 1100px; padding: 12px 0 40px;">
+
+          <!-- Prototype control: switches the two Cortex Home states. -->
+          <div class="proto-control" role="group" aria-label="Prototype control">
+            <span class="proto-control-label">Prototype control</span>
+            <div class="proto-seg">
+              <button type="button" class="proto-seg-btn" data-cortex-state="first">First visit</button>
+              <button type="button" class="proto-seg-btn" data-cortex-state="returning">Returning</button>
+            </div>
+          </div>
+
+          <!-- STATE A — first visit: start from intent, not from a catalog -->
+          <section data-cortex-view="first" style="margin: 32px 0 40px;">
+            <div style="max-width: 680px; margin: 0 auto; text-align: center;">
+              <h1 class="page-title" style="margin-bottom: var(--space-md);">
+                What agent do you want to build, or what problem are you solving?
+              </h1>
+              <p class="page-description" style="margin-bottom: var(--space-3xl);">
+                Describe it in your own words. Cortex will open the Work Bench with a starting point.
+              </p>
+              <div class="ask-bar" style="max-width:none; margin-bottom: var(--space-xl);">
+                <span class="ask-bar-icon icon icon-stars-01"></span>
+                <input type="text" class="ask-bar-input" id="cortex-intent-input"
+                       placeholder="e.g. Triage inbound support tickets and escalate billing issues"
+                       aria-label="Describe the agent you want to build">
+                <button type="button" class="btn btn-primary ask-bar-btn" id="cortex-intent-btn">Start &rarr;</button>
+              </div>
+              <div style="display:flex; gap: var(--space-md); flex-wrap:wrap; justify-content:center;">
+                <button type="button" class="btn btn-sm" data-intent-chip>Summarize customer calls</button>
+                <button type="button" class="btn btn-sm" data-intent-chip>Monitor compliance rules</button>
+                <button type="button" class="btn btn-sm" data-intent-chip>Answer HR questions</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- STATE B — returning: pick up where the work was left -->
+          <section data-cortex-view="returning" style="margin-bottom: 40px;">
+            <div class="section-header">
+              <h2 class="section-title">Continue where you left off</h2>
+              <span class="section-sub">Across Build, Observe and Manage</span>
+            </div>
+            <div class="grid grid-4">
+              <a class="card card-clickable" href="build.html" data-trail="Build&gt;Agent Work Bench&gt;Triage Bot">
+                <span class="card-subtitle">Last edited agent</span>
+                <span class="card-title">Triage Bot</span>
+                <div class="card-body" style="font-size:12px;color:var(--text-muted)">Draft saved yesterday &middot; 4 tools wired</div>
+              </a>
+              <a class="card card-clickable" href="manage.html#test-bench" data-trail="Manage&gt;Test Bench&gt;Run 142">
+                <span class="card-subtitle">Test run waiting for review</span>
+                <span class="card-title">Run #142</span>
+                <div class="card-body" style="font-size:12px;color:var(--text-muted)">18 cases &middot; 2 regressions flagged</div>
+              </a>
+              <a class="card card-clickable" href="manage.html#registry" data-trail="Manage&gt;Agent Registry&gt;Approvals">
+                <span class="card-subtitle">Awaiting approval</span>
+                <span class="card-title">Contract Reader v2</span>
+                <div class="card-body" style="font-size:12px;color:var(--text-muted)">Submitted 3 days ago</div>
+              </a>
+              <a class="card card-clickable" href="operate.html#logs" data-trail="Observe&gt;Control Tower&gt;Alerts">
+                <span class="card-subtitle">Alert in Control Tower</span>
+                <span class="card-title">Latency SLI breach</span>
+                <div class="card-body" style="font-size:12px;color:var(--text-muted)">Billing Agent &middot; 11 min ago</div>
+              </a>
+            </div>
+          </section>
+
+          <!-- Module catalog — rendered from SERAA_CONFIG.owned.cortex -->
+          <section>
+            <div class="section-header">
+              <h2 class="section-title">Modules</h2>
+              <span class="section-sub" id="cortex-module-count"></span>
+            </div>
+            <div class="grid grid-3" id="cortex-catalog"></div>
+          </section>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+</body>
+</html>

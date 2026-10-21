@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cortex — Agent configuration</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar: Persistent across all Cortex pages -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <!-- Wordmark with Cortex coral mark -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="product-dot dot-coral"></span>
+          <span class="brand-wordmark" style="font-size: 15px;">CORTEX</span>
+        </div>
+
+        <span class="separator" style="color: var(--border-strong); margin: 0 4px;">|</span>
+
+        <!-- System / Org / Project Scope Selector -->
+        <nav class="scope-breadcrumb" aria-label="Cortex Scope Hierarchy">
+          <span class="scope-pill">System</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill">Enterprise AI Unit</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill" style="font-weight: 600; color: var(--text);">Production Orchestration</span>
+        </nav>
+      </div>
+
+      <!-- Foundry Persistent Top Nav -->
+      <nav class="global-nav">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="build.html" class="nav-link">Build</a>
+        <a href="operate.html" class="nav-link">Observe</a>
+        <a href="manage.html" class="nav-link">Manage</a>
+        <a href="docs.html" class="nav-link">Docs</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Left Nav + Main Authoring Area -->
+    <div class="shell-body">
+      <!-- Agent Work Bench Left Nav -->
+      <aside class="shell-sidebar">
+        <div class="nav-group">
+          <div class="nav-group-title">Work Bench Studio</div>
+          <a href="#dashboard" class="nav-link">
+            <span>Dashboard</span>
+          </a>
+          <a href="#kb" class="nav-link">
+            <span>Knowledge Bases</span>
+          </a>
+          <a href="build.html" class="nav-link">
+            <span>Agents</span>
+          </a>
+          <a href="#mao" class="nav-link">
+            <span>MAO (Multi-Agent)</span>
+          </a>
+          <a href="build-avatars.html" class="nav-link">
+            <span>Avatars</span>
+          </a>
+          <a href="build-mcp.html" class="nav-link" data-trail="Build&gt;MCP Hub">
+            <span>MCP Hub</span>
+          </a>
+        </div>
+
+        <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+          <div style="font-size: 11px; color: var(--text-muted);">
+            Authoring Environment &bull; v3.2
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Area: All Agents List -->
+      <main class="shell-main">
+        <div class="container" style="max-width: 820px; padding: 12px 0 40px;">
+          <h1 class="page-title">Agent configuration</h1>
+          <p class="page-description" style="margin-bottom: var(--space-3xl);">
+            Customer Support Triage Agent &bull; draft
+          </p>
+
+          <div class="card" style="margin-bottom: 20px;">
+            <div class="card-header"><h2 class="card-title">Model</h2></div>
+            <div class="a2ui-field">
+              <span class="a2ui-field-label">Base model</span>
+              <div class="a2ui-field-control"><span>Claude Opus 4.5</span><span class="icon icon-chevron-down"></span></div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-bottom: 20px;">
+            <div class="card-header"><h2 class="card-title">Instructions</h2></div>
+            <textarea class="form-input" rows="5" style="width:100%; resize:vertical;">You triage inbound support tickets. Classify intent, extract sentiment, and escalate billing disputes to a human.</textarea>
+          </div>
+
+          <div class="card" style="margin-bottom: 20px;">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Tools</h2>
+                <span class="card-subtitle">MCP servers available to this agent</span>
+              </div>
+              <a href="build-mcp.html" class="btn btn-sm" data-trail="Build&gt;MCP Hub">Open MCP Hub &rarr;</a>
+            </div>
+            <div class="card-body" id="agent-tools"></div>
+          </div>
+
+          <div class="card" style="margin-bottom: 20px;">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Memory</h2>
+                <span class="card-subtitle">Synapse memory available to this scope</span>
+              </div>
+            </div>
+            <div class="card-body" id="agent-memory"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><h2 class="card-title">Knowledge bases</h2></div>
+            <div class="card-body">
+              <label style="display:flex; gap: var(--space-md); align-items:center; margin-bottom: var(--space-md);">
+                <input type="checkbox" checked> <span>Support macros &amp; policy wiki</span>
+              </label>
+              <label style="display:flex; gap: var(--space-md); align-items:center;">
+                <input type="checkbox"> <span>Billing FAQ (vector index)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </main>
+</main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+</body>
+</html>

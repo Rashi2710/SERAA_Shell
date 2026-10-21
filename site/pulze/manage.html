@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulze — SBAC &amp; Microfrontend Management</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+        <div class="scope-breadcrumb">
+          <a href="../index.html" style="color: var(--text-muted);">SERAA</a>
+          <span class="separator">/</span>
+          <a href="index.html" style="color: var(--text-muted);">Pulze</a>
+          <span class="separator">/</span>
+          <span class="brand-wordmark" style="font-size: 14px;">SBAC &amp; Admin</span>
+        </div>
+      </div>
+
+      <div class="app-header-right">
+        <span class="badge badge-muted" style="font-size: 11px;">Pulze Microfrontends</span>
+        <div class="org-badge" title="Organization">
+          <span class="org-badge-dot"></span>
+          <span class="org-badge-name">Acme Corp</span>
+        </div>
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Left Nav + SBAC Management Surface -->
+    <div class="shell-body">
+      <!-- Pulze Admin Left Nav -->
+      <aside class="shell-sidebar">
+        <div class="nav-group">
+          <div class="nav-group-title">Pulze SBAC</div>
+          <a href="manage.html" class="nav-link active" aria-current="page">
+            <span>Microfrontend Subscriptions</span>
+          </a>
+          <a href="#scope-hierarchy" class="nav-link">
+            <span>Scope Hierarchy</span>
+          </a>
+          <a href="#roles" class="nav-link">
+            <span>Sales Roles &amp; Grants</span>
+          </a>
+          <a href="#territories" class="nav-link">
+            <span>Territory Mappings</span>
+          </a>
+        </div>
+
+        <div class="nav-group" style="margin-top: 16px;">
+          <div class="nav-group-title">Data Ingestion</div>
+          <a href="#connectors" class="nav-link">
+            <span>CRM Connectors</span>
+          </a>
+          <a href="#telemetry" class="nav-link">
+            <span>Meeting Audio Feeds</span>
+          </a>
+          <a href="#audit" class="nav-link">
+            <span>Audit Trail</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Area: Subscriptions & SBAC Configuration -->
+      <main class="shell-main">
+        <div class="container" style="max-width: 1040px; padding: 4px 0 40px;">
+          <!-- Section Header -->
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+            <div>
+              <h1 class="page-title" style="margin-bottom: 2px;">Pulze SBAC &amp; Microfrontends</h1>
+              <p class="page-description">
+                Manage Scope-Based Access Control (SBAC), modular product subscriptions, territory bindings, and user role entitlements across the Pulze suite.
+              </p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <a href="index.html" class="btn btn-sm btn-secondary">&larr; Back to Catalog</a>
+              <a href="sales/intel-hub.html" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Open Sales Pulze &#x2197;</a>
+            </div>
+          </div>
+
+          <!-- Subscription Summary Cards -->
+          <div class="grid grid-3" style="margin-bottom: 24px;">
+            <div class="card" style="padding: 16px;">
+              <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;">Modular Subscription</div>
+              <div style="font-size: 20px; font-weight: 700; color: var(--text);">1 of 3 Active</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Sales Pulze licensed &bull; 2 add-on modules available</div>
+            </div>
+            <div class="card" style="padding: 16px;">
+              <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;">SBAC Root Scope</div>
+              <div style="font-size: 18px; font-weight: 700; color: var(--text);">Acme Corp &rsaquo; NA</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">3 Sales Regions &bull; 14 Field Territories</div>
+            </div>
+            <div class="card" style="padding: 16px;">
+              <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;">Licensed Seats</div>
+              <div style="font-size: 20px; font-weight: 700; color: var(--text);">45 / 50 Used</div>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">5 unassigned Enterprise AE seats remaining</div>
+            </div>
+          </div>
+
+          <!-- Microfrontend Subscriptions Table -->
+          <div class="card" style="margin-bottom: 32px;">
+            <div class="card-header">
+              <h2 class="card-title">Pulze Microfrontend Modules &amp; Licensing</h2>
+              <span class="badge badge-accent">Modular SaaS</span>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <table class="data-table" style="width: 100%;">
+                <thead>
+                  <tr>
+                    <th>Microfrontend</th>
+                    <th>Status</th>
+                    <th>Scope Bound</th>
+                    <th>Seats Allocated</th>
+                    <th>Version</th>
+                    <th style="text-align: right;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="font-weight: 600; font-size: 13px;">Sales Pulze</div>
+                      <div style="font-size: 11px; color: var(--text-muted);">Executive meeting intel, action trackers &amp; deal risks</div>
+                    </td>
+                    <td><span class="badge badge-active">Active / Licensed</span></td>
+                    <td>Tenant &rsaquo; NA Enterprise</td>
+                    <td>45 Seats</td>
+                    <td><code>v3.2.0</code></td>
+                    <td style="text-align: right;">
+                      <a href="sales/intel-hub.html" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-secondary">Launch in New Tab &#x2197;</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="font-weight: 600; font-size: 13px;">Market Pulze</div>
+                      <div style="font-size: 11px; color: var(--text-muted);">Competitor announcements, market sentiment &amp; shifts</div>
+                    </td>
+                    <td><span class="badge badge-muted">Not Subscribed</span></td>
+                    <td>Unassigned</td>
+                    <td>0 Seats</td>
+                    <td><code>v2.8.0</code></td>
+                    <td style="text-align: right;">
+                      <a href="../billing.html" class="btn btn-sm btn-secondary">Request License &rarr;</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="font-weight: 600; font-size: 13px;">Liquidity Pulze</div>
+                      <div style="font-size: 11px; color: var(--text-muted);">Treasury radar, cash flow forecasting &amp; covenant checks</div>
+                    </td>
+                    <td><span class="badge badge-muted">Not Subscribed</span></td>
+                    <td>Unassigned</td>
+                    <td>0 Seats</td>
+                    <td><code>v1.1.0</code></td>
+                    <td style="text-align: right;">
+                      <a href="../billing.html" class="btn btn-sm btn-secondary">Request License &rarr;</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Scope-Based Access Control (SBAC) Territory Hierarchy -->
+          <div class="card" style="margin-bottom: 32px;" id="scope-hierarchy">
+            <div class="card-header">
+              <h2 class="card-title">Scope Hierarchy &amp; Role Bindings</h2>
+              <span class="badge badge-muted">SBAC Model</span>
+            </div>
+            <div class="card-body">
+              <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+                Permissions in Pulze inherit down the scope tree: <code>Tenant &rsaquo; Sales Region &rsaquo; Territory</code>. Users only see meetings and deals belonging to their assigned scope.
+              </div>
+              <table class="data-table" style="width: 100%;">
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>SBAC Role</th>
+                    <th>Assigned Scope</th>
+                    <th>Permissions</th>
+                    <th style="text-align: right;">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="font-weight: 500;">Sarah Chen</div>
+                      <div style="font-size: 11px; color: var(--text-muted);">schen@acme.com</div>
+                    </td>
+                    <td><span class="badge badge-active">VP Sales</span></td>
+                    <td><code>Tenant &rsaquo; NA All</code></td>
+                    <td>Full territory roll-up, margin analytics, override scoring</td>
+                    <td style="text-align: right;"><span class="badge badge-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="font-weight: 500;">David Ross</div>
+                      <div style="font-size: 11px; color: var(--text-muted);">dross@acme.com</div>
+                    </td>
+                    <td><span class="badge badge-muted">AE West</span></td>
+                    <td><code>NA &rsaquo; West &rsaquo; Enterprise Tech</code></td>
+                    <td>Account meeting transcripts, action items, customer sentiment</td>
+                    <td style="text-align: right;"><span class="badge badge-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="font-weight: 500;">Elena Rostova</div>
+                      <div style="font-size: 11px; color: var(--text-muted);">erostova@acme.com</div>
+                    </td>
+                    <td><span class="badge badge-muted">Deal Desk Lead</span></td>
+                    <td><code>Tenant &rsaquo; Global</code></td>
+                    <td>Contract review, pricing risk analysis, executive summaries</td>
+                    <td style="text-align: right;"><span class="badge badge-active">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Connected Data Sources -->
+          <div class="card" id="connectors">
+            <div class="card-header">
+              <h2 class="card-title">Connected Ingestion Streams</h2>
+              <span class="badge badge-active">3 Feeds Online</span>
+            </div>
+            <div class="card-body">
+              <div class="grid grid-3" style="gap: 16px;">
+                <div style="padding: 12px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+                  <div style="font-weight: 600; font-size: 13px;">Salesforce CRM</div>
+                  <div style="font-size: 11px; color: var(--text-muted); margin: 4px 0 8px;">Syncs accounts, deals, pipeline stages</div>
+                  <span class="badge badge-active">Connected &bull; Real-time</span>
+                </div>
+                <div style="padding: 12px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+                  <div style="font-weight: 600; font-size: 13px;">Google Meet &amp; Zoom</div>
+                  <div style="font-size: 11px; color: var(--text-muted); margin: 4px 0 8px;">Automated call ingestion &amp; transcription</div>
+                  <span class="badge badge-active">Connected &bull; 842 calls</span>
+                </div>
+                <div style="padding: 12px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+                  <div style="font-weight: 600; font-size: 13px;">Snowflake Data Warehouse</div>
+                  <div style="font-size: 11px; color: var(--text-muted); margin: 4px 0 8px;">Aggregated ARR &amp; billing telemetry</div>
+                  <span class="badge badge-active">Connected &bull; Nightly</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+</body>
+</html>

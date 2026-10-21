@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERAA — Resolving Entitlements</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+  <div class="handoff-container">
+    <div class="handoff-card">
+      <div class="handoff-header">
+        <div class="handoff-spinner"></div>
+        <h1 class="handoff-title">Checking what your organisation has access to…</h1>
+        <p class="handoff-subtitle">Resolving tenant entitlements for <strong>Acme Corp</strong></p>
+      </div>
+
+      <!-- Entitlement Resolution List -->
+      <div class="entitlement-list">
+        <!-- Pulze -->
+        <div class="entitlement-row">
+          <div class="entitlement-row-left">
+            <span class="product-dot dot-teal"></span>
+            <div>
+              <div class="entitlement-name">Pulze</div>
+              <div class="entitlement-desc">Sales, Market &amp; Liquidity intelligence</div>
+            </div>
+          </div>
+          <span class="badge badge-active">Active</span>
+        </div>
+
+        <!-- Axon -->
+        <div class="entitlement-row">
+          <div class="entitlement-row-left">
+            <span class="product-dot dot-purple"></span>
+            <div>
+              <div class="entitlement-name">Axon</div>
+              <div class="entitlement-desc">Rules &amp; data intelligence</div>
+            </div>
+          </div>
+          <span class="locked-badge">Locked</span>
+        </div>
+
+        <!-- Synapse -->
+        <div class="entitlement-row">
+          <div class="entitlement-row-left">
+            <span class="product-dot dot-pink"></span>
+            <div>
+              <div class="entitlement-name">Synapse</div>
+              <div class="entitlement-desc">Adaptive memory layers</div>
+            </div>
+          </div>
+          <span class="locked-badge">Locked</span>
+        </div>
+
+        <!-- Cortex -->
+        <div class="entitlement-row">
+          <div class="entitlement-row-left">
+            <span class="product-dot dot-coral"></span>
+            <div>
+              <div class="entitlement-name">Cortex</div>
+              <div class="entitlement-desc">Agent Work Bench &amp; Control Tower</div>
+            </div>
+          </div>
+          <span class="badge badge-active">Active</span>
+        </div>
+      </div>
+
+      <!-- Continue Action -->
+      <div style="text-align: center;">
+        <a id="continue-btn" href="index.html" class="btn btn-primary" style="width: 100%; padding: 9px 16px;">
+          Continue to SERAA home &rarr;
+        </a>
+        <div id="auto-redirect-status" style="font-size: 11px; color: var(--text-muted); margin-top: 8px;">
+          Auto-forwarding in <span id="countdown">4</span>s…
+        </div>
+      </div>
+
+      <!-- Inline Stakeholder Note: Launch = handoff, not merge -->
+      <details class="handoff-explanation">
+        <summary>UX Architecture Note: Launch = handoff, not merge</summary>
+        <p>
+          Per <code>IA-SPEC.md</code>, SERAA operates as a discovery and entitlement layer above the products. Clicking into an entitled product passes the user's identity and org hint, then that product's own Scope-Based Access Control (SBAC) takes over its own session and permissions rather than merging authorization into a shared IAM graph prematurely.
+        </p>
+      </details>
+    </div>
+  </div>
+
+  <script src="shared/shell.js"></script>
+  <script>
+    // Wireframe Auto-forward countdown
+    (function() {
+      let secondsLeft = 4;
+      const countdownEl = document.getElementById('countdown');
+      const timer = setInterval(() => {
+        secondsLeft -= 1;
+        if (countdownEl) countdownEl.textContent = secondsLeft;
+        if (secondsLeft <= 0) {
+          clearInterval(timer);
+          window.location.href = 'index.html';
+        }
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Pulze — Intel Hub</title>
+  <link rel="stylesheet" href="../../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home (convention across all 4 products) -->
+        <a href="../../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <div class="scope-breadcrumb">
+          <span class="product-dot dot-teal" style="margin-right: 2px;"></span>
+          <span class="brand-wordmark" style="font-size: 14px;">Sales Pulze</span>
+        </div>
+      </div>
+
+      <div class="app-header-right">
+        <!-- Pulze internal scope indicator -->
+        <span class="badge badge-muted" style="font-size: 11px;">North America Enterprise</span>
+        <div class="org-badge" title="Organization">
+          <span class="org-badge-dot"></span>
+          <span class="org-badge-name">Acme Corp</span>
+        </div>
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Thin Strip above Navigation / Body: Breadcrumb back to Pulze catalog + Product Switcher (SERAA addition) -->
+    <div class="sub-product-strip">
+      <div class="scope-breadcrumb">
+        <a href="../index.html" style="color: var(--text-muted);">&larr; Pulze Suite Catalog</a>
+        <span class="separator">/</span>
+        <span style="font-weight: 600; color: var(--text);">Sales Pulze Workspace</span>
+      </div>
+
+      <!-- Product Switcher across Sales / Market / Liquidity -->
+      <div class="sub-product-switcher">
+        <span style="color: var(--text-muted); font-size: 11px; margin-right: 4px;">Suite Product:</span>
+        <a href="intel-hub.html" class="sub-product-tab active">Sales</a>
+        <a href="#market" class="sub-product-tab">Market</a>
+        <a href="#liquidity" class="sub-product-tab">Liquidity</a>
+      </div>
+    </div>
+
+    <!-- Shell Body: Left Nav + Main Workspace -->
+    <div class="shell-body">
+      <!-- Pulze Sidebar Nav -->
+      <aside class="shell-sidebar">
+        <!-- Platform Group -->
+        <div class="nav-group">
+          <div class="nav-group-title">Platform</div>
+          <a href="intel-hub.html" class="nav-link active" aria-current="page">
+            <span>Intel Hub</span>
+          </a>
+          <a href="#meeting-repo" class="nav-link">
+            <span>Meeting Repository</span>
+          </a>
+          <a href="#action-center" class="nav-link">
+            <span>Action Center</span>
+          </a>
+        </div>
+
+        <!-- Administration Group -->
+        <div class="nav-group">
+          <div class="nav-group-title">Administration</div>
+          <a href="#admin-dashboard" class="nav-link">
+            <span>Admin Dashboard</span>
+          </a>
+          <a href="#meeting-board" class="nav-link">
+            <span>Meeting Board</span>
+          </a>
+          <a href="#users-roles" class="nav-link">
+            <span>Users &amp; Roles</span>
+          </a>
+          <a href="#scopes-structure" class="nav-link">
+            <span>Scopes &amp; Structure</span>
+          </a>
+          <a href="../cost-insights.html" class="nav-link">
+            <span>Cost Insights</span>
+          </a>
+          <a href="#business-segments" class="nav-link">
+            <span>Business Segments</span>
+          </a>
+        </div>
+
+        <!-- Settings Group -->
+        <div class="nav-group">
+          <div class="nav-group-title">Settings</div>
+          <a href="#sys-config" class="nav-link">
+            <span>System Configuration</span>
+          </a>
+        </div>
+
+        <!-- Info Group -->
+        <div class="nav-group">
+          <div class="nav-group-title">Info</div>
+          <a href="#setup-reqs" class="nav-link">
+            <span>Setup Requirements</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Analytical Area: Intel Hub -->
+      <main class="shell-main">
+        <div class="container" style="max-width: 1040px; padding: 0 0 40px;">
+          <!-- Intel Hub Page Header -->
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <h1 class="page-title" style="margin-bottom: 0;">Intel Hub</h1>
+                <span class="badge badge-accent" style="font-size: 11px;">AI Inferred</span>
+              </div>
+              <p class="page-description" style="margin-top: 4px;">
+                Consolidated signals extracted from 312 recent customer and deal meetings.
+              </p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <select class="form-select" style="font-size: 12px;">
+                <option>Last 30 Days</option>
+                <option>This Quarter</option>
+              </select>
+              <button class="btn btn-sm btn-primary">Export Report</button>
+            </div>
+          </div>
+
+          <!-- KPI Summary Row -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-label">Meetings Analyzed</span>
+              <span class="metric-value">312</span>
+              <span class="metric-delta">&uarr; 18% vs last month</span>
+              <span class="metric-caption">100% transcript coverage</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Buyer Sentiment Score</span>
+              <span class="metric-value">78.4</span>
+              <span class="metric-delta">&uarr; +4.2 pts</span>
+              <span class="metric-caption">Positive sentiment index</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Open Action Items</span>
+              <span class="metric-value">47</span>
+              <span class="metric-delta negative">&bull; 12 due this week</span>
+              <span class="metric-caption">Synthesized from calls</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Competitor Mentions</span>
+              <span class="metric-value">84</span>
+              <span class="metric-delta negative">&uarr; 9 new mentions</span>
+              <span class="metric-caption">Across 26 opportunities</span>
+            </div>
+          </div>
+
+          <!-- Section 1: Field Insights -->
+          <div class="card" style="margin-bottom: 24px;">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Field Insights</h2>
+                <span class="card-subtitle">AI-detected deal objections and high-frequency topics</span>
+              </div>
+              <span class="badge badge-muted">Updated 10m ago</span>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <table class="wire-table">
+                <thead>
+                  <tr>
+                    <th>Signal / Topic</th>
+                    <th>Frequency</th>
+                    <th>Sentiment Impact</th>
+                    <th>Sample Extracted Insight</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight: 600;">Pricing &amp; Contract Terms</td>
+                    <td>42 meetings</td>
+                    <td><span class="badge badge-muted" style="color: var(--danger); border-color: var(--danger-border);">High Friction</span></td>
+                    <td>Prospects requesting multi-year discounting flexibility in EMEA region.</td>
+                    <td><a href="#action-center" class="btn btn-sm">View in Actions</a></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">Security &amp; FedRAMP Certification</td>
+                    <td>28 meetings</td>
+                    <td><span class="badge badge-muted" style="color: var(--warning); border-color: var(--warning-border);">Moderate</span></td>
+                    <td>Customers inquiring about SOC2 Type II and on-premise governance.</td>
+                    <td><a href="#action-center" class="btn btn-sm">View in Actions</a></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">Agent Orchestration Speed</td>
+                    <td>35 meetings</td>
+                    <td><span class="badge badge-muted" style="color: var(--success); border-color: var(--success-border);">Positive</span></td>
+                    <td>Executive sponsors validated low latency and seamless workflow handoffs.</td>
+                    <td><a href="#action-center" class="btn btn-sm">View in Actions</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 2: Field Operations Health -->
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Field Operations Health</h3>
+                  <span class="card-subtitle">Engagement cadence across pipeline tiers</span>
+                </div>
+                <span class="badge badge-active">Good</span>
+              </div>
+              <div class="card-body">
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 4px;">
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
+                      <span>Tier 1 Accounts (Avg 4.2 touches / month)</span>
+                      <span style="font-weight: 600;">92% On Target</span>
+                    </div>
+                    <div style="background: var(--surface-subtle); height: 8px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-subtle);">
+                      <div style="width: 92%; height: 100%; background: var(--accent);"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
+                      <span>Executive Follow-up SLA (&lt; 24h response)</span>
+                      <span style="font-weight: 600;">86% Compliant</span>
+                    </div>
+                    <div style="background: var(--surface-subtle); height: 8px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-subtle);">
+                      <div style="width: 86%; height: 100%; background: var(--accent);"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3 class="card-title">Meeting Repository Snapshot</h3>
+                  <span class="card-subtitle">Latest recorded sessions parsed into Pulze</span>
+                </div>
+                <a href="#meeting-repo" style="font-size: 12px;">View All &rarr;</a>
+              </div>
+              <div class="card-body">
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                  <div style="padding-bottom: 8px; border-bottom: 1px solid var(--border-subtle);">
+                    <div style="font-weight: 600; font-size: 13px;">Q3 Enterprise Renewal Sync — Acme Financial</div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Recorded Today, 9:30 AM &bull; 4 Action Items &bull; Positive</div>
+                  </div>
+                  <div style="padding-bottom: 8px; border-bottom: 1px solid var(--border-subtle);">
+                    <div style="font-weight: 600; font-size: 13px;">Technical Deep Dive — Apex Logistics</div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Recorded Yesterday, 3:00 PM &bull; 2 Action Items &bull; Neutral</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../../shared/shell.js"></script>
+</body>
+</html>

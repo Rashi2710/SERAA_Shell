@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERAA — Assure Central Governance</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <a href="index.html" class="app-switcher" title="SERAA Platform Switcher">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+        <div class="scope-breadcrumb">
+          <a href="index.html" class="brand-wordmark" style="font-size: 15px;">SERAA</a>
+          <span class="separator">/</span>
+          <span style="font-weight: 600; color: var(--text);">Assure</span>
+        </div>
+      </div>
+
+      <nav class="global-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="docs.html" class="nav-link">Docs</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="org-badge" title="Organization">
+          <span class="org-badge-dot"></span>
+          <span class="org-badge-name">Acme Corp</span>
+        </div>
+
+        <!-- Account Menu with Dropdown -->
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="assure.html" class="account-dropdown-item" style="font-weight: 600; color: var(--accent);">
+              <span>Assure Governance</span>
+              <span class="badge badge-accent" style="font-size: 10px;">Active</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Assure Dashboard Surface -->
+    <div class="shell-body">
+      <main class="shell-main">
+        <div class="container" style="max-width: 1040px; padding: 16px 0 60px;">
+          <!-- Headline Section per prompt -->
+          <div style="margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+              <span class="assure-status-dot" style="width: 12px; height: 12px;"></span>
+              <h1 class="page-title" style="margin-bottom: 0;">Assure Governance Dashboard</h1>
+              <span class="badge badge-active">Control Plane</span>
+            </div>
+            <!-- Explicit subtitle per prompt -->
+            <p class="page-description" style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">
+              A unified control-plane view across the suite, not a separate system of record.
+            </p>
+          </div>
+
+          <!-- Headline Banner Stat -->
+          <div class="alert-banner-panel" style="margin-bottom: 32px; padding: 16px 20px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span class="icon icon-shield-01 icon-lg"></span>
+              <div>
+                <div style="font-size: 16px; font-weight: 700; color: var(--success);">
+                  4 products watched, 0 open risk items
+                </div>
+                <div style="font-size: 12px; color: var(--success); margin-top: 2px;">
+                  All entitlement guardrails, token consumption caps, and privacy firewalls are compliant.
+                </div>
+              </div>
+            </div>
+            <span class="badge badge-active" style="background: var(--surface); border-color: var(--success-border); color: var(--success);">
+              Audit Healthy
+            </span>
+          </div>
+
+          <!-- Product Summary Cards (One per Product, consistent costs) -->
+          <div class="section-header">
+            <h2 class="section-title">Product Surveillance &amp; Compliance Summary</h2>
+            <span class="section-sub">Cross-checking billing status and policy telemetry</span>
+          </div>
+
+          <div class="grid grid-2" style="gap: 20px;">
+            <!-- Pulze Card -->
+            <div class="assure-product-card">
+              <div class="card-header">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="product-dot dot-teal"></span>
+                  <div>
+                    <h3 class="card-title">Pulze</h3>
+                    <span class="card-subtitle">Sales, Market, Liquidity Intelligence</span>
+                  </div>
+                </div>
+                <span class="badge badge-active">Active</span>
+              </div>
+              <div class="card-body" style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: var(--text-muted);">Current Cycle Spend:</span>
+                  <strong style="color: var(--text);">$1,840.00</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: var(--text-muted);">Compliance Flag:</span>
+                  <span class="badge badge-active" style="font-size: 11px;">0 Flags (No open risks)</span>
+                </div>
+                <div style="font-size: 11px; color: var(--text-muted);">
+                  Voice transcript redaction active; zero PII leakage detected across 312 meetings.
+                </div>
+              </div>
+              <div class="card-footer">
+                <a href="pulze/cost-insights.html" style="font-size: 12px;">Inspect Pulze Costs &rarr;</a>
+              </div>
+            </div>
+
+            <!-- Axon Card -->
+            <div class="assure-product-card" style="opacity: 0.85;">
+              <div class="card-header">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="product-dot dot-purple"></span>
+                  <div>
+                    <h3 class="card-title">Axon</h3>
+                    <span class="card-subtitle">Rule Library &amp; KPI Engine</span>
+                  </div>
+                </div>
+                <span class="locked-badge">Locked / Monitored</span>
+              </div>
+              <div class="card-body" style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: var(--text-muted);">Current Cycle Spend:</span>
+                  <strong style="color: var(--text);">$0.00</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: var(--text-muted);">Compliance Flag:</span>
+                  <span class="badge badge-active" style="font-size: 11px;">0 Flags (Clean)</span>
+                </div>
+                <div style="font-size: 11px; color: var(--text-muted);">
+                  Telemetry monitoring standby; evaluated rule sets ready for activation upon entitlement.
+                </div>
+              </div>
+              <div class="card-footer">
+                <a href="axon/rule-library.html" style="font-size: 12px;">View Rules &rarr;</a>
+              </div>
+            </div>
+
+            <!-- Synapse Card -->
+            <div class="assure-product-card" style="opacity: 0.85;">
+              <div class="card-header">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="product-dot dot-pink"></span>
+                  <div>
+                    <h3 class="card-title">Synapse</h3>
+                    <span class="card-subtitle">Adaptive Memory Workspace</span>
+                  </div>
+                </div>
+                <span class="locked-badge">Locked / Monitored</span>
+              </div>
+              <div class="card-body" style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: var(--text-muted);">Current Cycle Spend:</span>
+                  <strong style="color: var(--text);">$0.00</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: var(--text-muted);">Compliance Flag:</span>
+                  <span class="badge badge-active" style="font-size: 11px;">0 Flags (Clean)</span>
+                </div>
+                <div style="font-size: 11px; color: var(--text-muted);">
+                  Static revision baseline certified; zero drift violations detected.
+                </div>
+              </div>
+              <div class="card-footer">
+                <a href="synapse/workspace.html" style="font-size: 12px;">View Workspace &rarr;</a>
+              </div>
+            </div>
+
+            <!-- Cortex Card -->
+            <div class="assure-product-card">
+              <div class="card-header">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="product-dot dot-coral"></span>
+                  <div>
+                    <h3 class="card-title">Cortex</h3>
+                    <span class="card-subtitle">Agent Work Bench &amp; Mesh</span>
+                  </div>
+                </div>
+                <span class="badge badge-active">Active</span>
+              </div>
+              <div class="card-body" style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: var(--text-muted);">Current Cycle Spend:</span>
+                  <strong style="color: var(--text);">$3,420.80</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: var(--text-muted);">Compliance Flag:</span>
+                  <span class="badge badge-active" style="font-size: 11px;">0 Flags (No open risks)</span>
+                </div>
+                <div style="font-size: 11px; color: var(--text-muted);">
+                  14 running agents verified under EDMS security bounds; 0 policy breaches.
+                </div>
+              </div>
+              <div class="card-footer">
+                <a href="cortex/operate.html" style="font-size: 12px;">Inspect Control Tower &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stakeholder Principle Callout -->
+          <div style="margin-top: 36px; padding: 16px 20px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px; color: var(--text-muted); line-height: 1.6;">
+            <strong>IA Architecture Principle:</strong> Assure does <em>not</em> get a product tile on SERAA home and is not a separate sellable package. It is an ambient control-plane surface within the SERAA shell summarizing cross-product health, cost, and compliance over each product's standalone systems.
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="shared/shell.js"></script>
+</body>
+</html>

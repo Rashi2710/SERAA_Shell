@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cortex — Discover</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar: Persistent across all Cortex pages -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <!-- Wordmark with Cortex coral mark -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="product-dot dot-coral"></span>
+          <span class="brand-wordmark" style="font-size: 15px;">CORTEX</span>
+        </div>
+
+        <span class="separator" style="color: var(--border-strong); margin: 0 4px;">|</span>
+
+        <!-- System / Org / Project Scope Selector -->
+        <nav class="scope-breadcrumb" aria-label="Cortex Scope Hierarchy">
+          <span class="scope-pill">System</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill">Enterprise AI Unit</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill" style="font-weight: 600; color: var(--text);">Production Orchestration</span>
+        </nav>
+      </div>
+
+      <!-- Foundry Persistent Top Nav -->
+      <nav class="global-nav">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="build.html" class="nav-link">Build</a>
+        <a href="operate.html" class="nav-link">Observe</a>
+        <a href="manage.html" class="nav-link">Manage</a>
+        <a href="docs.html" class="nav-link">Docs</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Discover Surface (Scoped to Cortex) -->
+    <div class="shell-body">
+      <main class="shell-main">
+        <div class="container" style="max-width: 1080px; padding: 12px 0 40px;">
+          <!-- Page Title & Header -->
+          <div style="margin-bottom: 28px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span class="badge badge-accent" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Cortex Architecture &amp; Solution Hub</span>
+            </div>
+            <h1 class="page-title">Discover</h1>
+            <p class="page-description">
+              Explore core Cortex building blocks, prebuilt agent blueprints, test harnesses, enterprise data management (EDMS), and foundation model reasoning endpoints.
+            </p>
+          </div>
+
+          <!-- 1. Featured Blueprints & Solutions -->
+          <section id="featured" style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">Featured Blueprints</h2>
+              <span class="section-sub">Curated production-ready templates built natively for the Cortex engine</span>
+            </div>
+            <div class="grid grid-4">
+              <!-- Featured Card 1: Multi-Agent Orchestration -->
+              <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="card-header" style="padding-bottom: 8px;">
+                    <div>
+                      <h3 class="card-title" style="font-size: 14px;">Multi-Agent Orchestration</h3>
+                      <span class="card-subtitle">Work Bench &bull; Supervisory Pattern</span>
+                    </div>
+                    <span class="badge badge-accent">Featured</span>
+                  </div>
+                  <div class="card-body" style="font-size: 12px; color: var(--text-muted); line-height: 1.45;">
+                    Chained supervisor pattern coordinating planner, SQL executor, and verifier sub-agents with human signoff gates.
+                  </div>
+                </div>
+                <div class="card-footer" style="margin-top: 12px;">
+                  <span style="font-size: 11px; color: var(--text-subtle);">4.9 &bull; 1.8k deployments</span>
+                  <a href="build.html" class="btn btn-sm btn-primary">Launch in Work Bench &rarr;</a>
+                </div>
+              </div>
+
+              <!-- Featured Card 2: RAG Semantic Search -->
+              <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="card-header" style="padding-bottom: 8px;">
+                    <div>
+                      <h3 class="card-title" style="font-size: 14px;">RAG Semantic Model</h3>
+                      <span class="card-subtitle">EDMS Suite &bull; Vector Pipeline</span>
+                    </div>
+                    <span class="badge badge-muted">Popular</span>
+                  </div>
+                  <div class="card-body" style="font-size: 12px; color: var(--text-muted); line-height: 1.45;">
+                    Hybrid dense/sparse semantic retrieval pipeline with contextual document chunking and dynamic reranking.
+                  </div>
+                </div>
+                <div class="card-footer" style="margin-top: 12px;">
+                  <span style="font-size: 11px; color: var(--text-subtle);">5.0 &bull; 2.4k deployments</span>
+                  <a href="build.html" class="btn btn-sm btn-primary">Deploy RAG Model &rarr;</a>
+                </div>
+              </div>
+
+              <!-- Featured Card 3: Synthetic Evaluation Test Suite -->
+              <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="card-header" style="padding-bottom: 8px;">
+                    <div>
+                      <h3 class="card-title" style="font-size: 14px;">Synthetic Test Suite</h3>
+                      <span class="card-subtitle">Test Bench &bull; Quality Assurance</span>
+                    </div>
+                    <span class="badge badge-muted">Verified</span>
+                  </div>
+                  <div class="card-body" style="font-size: 12px; color: var(--text-muted); line-height: 1.45;">
+                    Automated multi-turn test harness evaluating instruction adherence, latency, and factual grounding with LLM judges.
+                  </div>
+                </div>
+                <div class="card-footer" style="margin-top: 12px;">
+                  <span style="font-size: 11px; color: var(--text-subtle);">4.9 &bull; 1.2k deployments</span>
+                  <a href="manage.html#test-bench" class="btn btn-sm btn-primary">Open Test Bench &rarr;</a>
+                </div>
+              </div>
+
+              <!-- Featured Card 4: Incident Triage Pipeline -->
+              <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="card-header" style="padding-bottom: 8px;">
+                    <div>
+                      <h3 class="card-title" style="font-size: 14px;">Incident Triage Sentinel</h3>
+                      <span class="card-subtitle">Control Tower &bull; Operations</span>
+                    </div>
+                    <span class="badge badge-muted">Enterprise</span>
+                  </div>
+                  <div class="card-body" style="font-size: 12px; color: var(--text-muted); line-height: 1.45;">
+                    Continuous telemetry listener ingesting PagerDuty and cloud logs, calculating severity impact, and firing playbooks.
+                  </div>
+                </div>
+                <div class="card-footer" style="margin-top: 12px;">
+                  <span style="font-size: 11px; color: var(--text-subtle);">4.8 &bull; 950 deployments</span>
+                  <a href="operate.html" class="btn btn-sm btn-primary">Deploy to Tower &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. Browse by Cortex Module (Agent Work Bench, Test Bench, Registry, EDMS, Control Tower, System Config) -->
+          <section id="browse-cortex-modules" style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">Browse by Cortex Subsystem</h2>
+              <span class="section-sub">Explore templates, toolkits, and configurations organized across Cortex's lifecycle modules</span>
+            </div>
+
+            <!-- Module 1: Agent Work Bench & Avatars -->
+            <div style="margin-bottom: 26px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="product-icon-badge" style="width: 26px; height: 26px;">
+                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+                      <polygon points="10,2 17,6 17,14 10,18 3,14 3,6"/>
+                      <rect x="8" y="8" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/>
+                    </svg>
+                  </div>
+                  <span style="font-weight: 700; font-size: 15px; color: var(--text);">Agent Work Bench &amp; Avatars</span>
+                  <span class="badge badge-muted" style="font-size: 10px;">Build &bull; Authoring Canvas</span>
+                </div>
+                <a href="build.html" style="font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 500;">Open Work Bench &rarr;</a>
+              </div>
+              <div class="grid grid-3">
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">Prompt &amp; Tool Orchestrator</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Visual canvas for prompt chains, dynamic tool calling schemas, and zero-shot schema generation.</p>
+                  </div>
+                  <a href="build.html" class="btn btn-sm btn-secondary" style="width: 100%;">Use template</a>
+                </div>
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">Avatar Persona Studio</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Lightweight conversational avatars with pre-configured tone, domain guardrails, and role personas.</p>
+                  </div>
+                  <a href="build-avatars.html" class="btn btn-sm btn-secondary" style="width: 100%;">Browse Avatars</a>
+                </div>
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">Zero-Trust Code Sandbox</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Isolated Python runtime enabling agent-generated code execution without host exposure.</p>
+                  </div>
+                  <a href="build.html" class="btn btn-sm btn-secondary" style="width: 100%;">Attach Sandbox</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Module 2: Agent Test Bench & Registry -->
+            <div style="margin-bottom: 26px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="product-icon-badge" style="width: 26px; height: 26px;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                      <line x1="16" y1="17" x2="8" y2="17"/>
+                      <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                  </div>
+                  <span style="font-weight: 700; font-size: 15px; color: var(--text);">Agent Test Bench &amp; Registry</span>
+                  <span class="badge badge-muted" style="font-size: 10px;">Manage &bull; Evaluation &amp; Release</span>
+                </div>
+                <a href="manage.html#test-bench" style="font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 500;">Open Test Bench &rarr;</a>
+              </div>
+              <div class="grid grid-3">
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">Synthetic Evaluation Harness</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Automated multi-turn test sets scoring groundedness, hallucination rate, and instruction drift.</p>
+                  </div>
+                  <a href="manage.html#test-bench" class="btn btn-sm btn-secondary" style="width: 100%;">Run Test Suite</a>
+                </div>
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">Production Agent Registry</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Versioned release repository with immutable artifact hashing, promotion audits, and rollbacks.</p>
+                  </div>
+                  <a href="manage.html#registry" class="btn btn-sm btn-secondary" style="width: 100%;">View Registry</a>
+                </div>
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">Red Teaming &amp; Jailbreak Probes</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Automated adversarial attack scenarios verifying safety guardrails prior to production gating.</p>
+                  </div>
+                  <a href="manage.html#test-bench" class="btn btn-sm btn-secondary" style="width: 100%;">Run Security Probe</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Module 3: EDMS — Enterprise Data Suite & Semantic Models -->
+            <div style="margin-bottom: 26px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="product-icon-badge" style="width: 26px; height: 26px;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                    </svg>
+                  </div>
+                  <span style="font-weight: 700; font-size: 15px; color: var(--text);">EDMS — Enterprise Data Suite</span>
+                  <span class="badge badge-muted" style="font-size: 10px;">Data &bull; Semantic &amp; Governance</span>
+                </div>
+                <a href="manage.html#governance" style="font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 500;">Open Data Security &rarr;</a>
+              </div>
+              <div class="grid grid-3">
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">RAG Semantic Model &amp; Chunking</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Hierarchical document parsing, contextual vector embeddings, and hybrid rerankers.</p>
+                  </div>
+                  <a href="build.html" class="btn btn-sm btn-secondary" style="width: 100%;">Attach Semantic Model</a>
+                </div>
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">Unified Ingestion Connectors</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Enterprise data bridges for Snowflake, Databricks, PostgreSQL, S3, and Salesforce.</p>
+                  </div>
+                  <a href="manage.html#connected-resources" class="btn btn-sm btn-secondary" style="width: 100%;">Manage Connectors</a>
+                </div>
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">Data Security &amp; PII Sanitizer</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Real-time token gateway masking sensitive PII, PHI, and credentials before model inference.</p>
+                  </div>
+                  <a href="manage.html#governance" class="btn btn-sm btn-secondary" style="width: 100%;">Configure EDMS</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Module 4: Control Tower & System Configuration -->
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="product-icon-badge" style="width: 26px; height: 26px;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                      <line x1="8" y1="21" x2="16" y2="21"/>
+                      <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                  </div>
+                  <span style="font-weight: 700; font-size: 15px; color: var(--text);">Control Tower &amp; System Configuration</span>
+                  <span class="badge badge-muted" style="font-size: 10px;">Operate &bull; Observability &amp; Admin</span>
+                </div>
+                <a href="operate.html" style="font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 500;">Open Control Tower &rarr;</a>
+              </div>
+              <div class="grid grid-3">
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">Live Execution Observability</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Step-by-step agent trajectory traces, tool call inspection, and token latency breakdowns.</p>
+                  </div>
+                  <a href="operate.html" class="btn btn-sm btn-secondary" style="width: 100%;">View Telemetry</a>
+                </div>
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">Cost &amp; Token Quota Guard</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Automated throttling, tenant rate limits, and cost anomaly alerts to prevent budget overruns.</p>
+                  </div>
+                  <a href="manage.html#quota" class="btn btn-sm btn-secondary" style="width: 100%;">Configure Quotas</a>
+                </div>
+                <div class="card" style="padding: 14px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div>
+                    <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 4px;">System Monitoring &amp; Licensing</h4>
+                    <p style="font-size: 11px; color: var(--text-muted); margin: 0 0 10px; line-height: 1.4;">Cortex health telemetry, active user seats, and tenant resource allocations.</p>
+                  </div>
+                  <a href="manage.html" class="btn btn-sm btn-secondary" style="width: 100%;">View System Config</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Cortex Model Hub -->
+          <section id="model-hub" style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">Model Hub</h2>
+              <span class="section-sub">Explore foundation models configured with pre-warmed reasoning endpoints for Cortex Agent Work Bench</span>
+            </div>
+            <div class="strip-horizontal-grid">
+              <!-- Model 1 -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">AN</div>
+                    <div>
+                      <div class="strip-item-name">Claude 3.5 Sonnet</div>
+                      <span class="strip-item-badge">Anthropic</span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">High-precision reasoning, nuanced code synthesis, and multimodal tool use.</p>
+                </div>
+                <a href="build.html" class="btn btn-sm btn-secondary" style="width: 100%;">Try in Work Bench</a>
+              </div>
+
+              <!-- Model 2 -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">GO</div>
+                    <div>
+                      <div class="strip-item-name">Gemini 1.5 Pro</div>
+                      <span class="strip-item-badge">Google Cloud</span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">1M+ token context window for massive meeting repos and video telemetry.</p>
+                </div>
+                <a href="build.html" class="btn btn-sm btn-secondary" style="width: 100%;">Try in Work Bench</a>
+              </div>
+
+              <!-- Model 3 -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">OA</div>
+                    <div>
+                      <div class="strip-item-name">GPT-4o</div>
+                      <span class="strip-item-badge">OpenAI</span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">Omni-modal architecture tuned for low-latency dialogue and rapid routing.</p>
+                </div>
+                <a href="build.html" class="btn btn-sm btn-secondary" style="width: 100%;">Try in Work Bench</a>
+              </div>
+
+              <!-- Model 4 -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">AN</div>
+                    <div>
+                      <div class="strip-item-name">Claude 3 Opus</div>
+                      <span class="strip-item-badge">Anthropic</span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">Deep analytical synthesis for complex compliance rules and legal auditing.</p>
+                </div>
+                <a href="build.html" class="btn btn-sm btn-secondary" style="width: 100%;">Try in Work Bench</a>
+              </div>
+
+              <!-- Model 5 -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">ME</div>
+                    <div>
+                      <div class="strip-item-name">Llama 3.3 70B</div>
+                      <span class="strip-item-badge">Meta Open</span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">Cost-efficient enterprise self-hosted weights for privacy-restricted VPCs.</p>
+                </div>
+                <a href="build.html" class="btn btn-sm btn-secondary" style="width: 100%;">Try in Work Bench</a>
+              </div>
+
+              <!-- Model 6 -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">MI</div>
+                    <div>
+                      <div class="strip-item-name">Mistral Large 2</div>
+                      <span class="strip-item-badge">Mistral AI</span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">Leading multilingual reasoning with native multi-agent JSON tool calling.</p>
+                </div>
+                <a href="build.html" class="btn btn-sm btn-secondary" style="width: 100%;">Try in Work Bench</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+</body>
+</html>

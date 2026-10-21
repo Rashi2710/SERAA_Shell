@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cortex — Build (Avatar Presets)</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar: Persistent across all Cortex pages -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <!-- Wordmark with Cortex coral mark -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="product-dot dot-coral"></span>
+          <span class="brand-wordmark" style="font-size: 15px;">CORTEX</span>
+        </div>
+
+        <span class="separator" style="color: var(--border-strong); margin: 0 4px;">|</span>
+
+        <!-- System / Org / Project Scope Selector -->
+        <nav class="scope-breadcrumb" aria-label="Cortex Scope Hierarchy">
+          <span class="scope-pill">System</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill">Enterprise AI Unit</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill" style="font-weight: 600; color: var(--text);">Production Orchestration</span>
+        </nav>
+      </div>
+
+      <!-- Foundry Persistent Top Nav -->
+      <nav class="global-nav">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="build.html" class="nav-link active" aria-current="page">Build</a>
+        <a href="operate.html" class="nav-link">Observe</a>
+        <a href="manage.html" class="nav-link">Manage</a>
+        <a href="docs.html" class="nav-link">Docs</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Left Nav + Avatars Surface -->
+    <div class="shell-body">
+      <!-- Agent Work Bench Left Nav with Avatars Active -->
+      <aside class="shell-sidebar">
+        <div class="nav-group">
+          <div class="nav-group-title">Work Bench Studio</div>
+          <a href="#dashboard" class="nav-link">
+            <span>Dashboard</span>
+          </a>
+          <a href="#kb" class="nav-link">
+            <span>Knowledge Bases</span>
+          </a>
+          <a href="build.html" class="nav-link">
+            <span>Agents</span>
+          </a>
+          <a href="#mao" class="nav-link">
+            <span>MAO (Multi-Agent)</span>
+          </a>
+          <a href="build-avatars.html" class="nav-link active" aria-current="page">
+            <span>Avatars</span>
+          </a>
+          <a href="#mcp" class="nav-link">
+            <span>MCP Hub</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Area: Avatar Presets -->
+      <main class="shell-main">
+        <div class="container" style="max-width: 1040px; padding: 4px 0 40px;">
+          <!-- Section Header -->
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <h1 class="page-title" style="margin-bottom: 0;">Avatar Presets</h1>
+                <span class="badge badge-accent" style="font-size: 11px;">Agent Work Bench Presets</span>
+              </div>
+              <p class="page-description" style="margin-top: 4px;">
+                Specialized persona-driven agent configurations ready for immediate conversational testing or deployment.
+              </p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <a href="build.html" class="btn btn-sm btn-secondary">&larr; Back to All Agents</a>
+            </div>
+          </div>
+
+          <!-- Avatar Cards Grid -->
+          <div class="grid grid-2">
+            <!-- Avatar 1 -->
+            <div class="card">
+              <div class="card-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <div class="avatar-icon">MS</div>
+                  <div>
+                    <h3 class="card-title">Meeting Scribe</h3>
+                    <span class="card-subtitle">Pulze Context Integrated</span>
+                  </div>
+                </div>
+                <span class="badge badge-active">Ready</span>
+              </div>
+              <div class="card-body">
+                Listens to meeting transcripts, synthesizes executive summaries, and flags action items with assigned owners.
+              </div>
+              <div class="card-footer">
+                <span style="font-size: 11px; color: var(--text-muted);">Model: Gemini 1.5 Flash</span>
+                <button class="btn btn-sm btn-primary">Try it (Chat Preview)</button>
+              </div>
+            </div>
+
+            <!-- Avatar 2 -->
+            <div class="card">
+              <div class="card-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <div class="avatar-icon">CC</div>
+                  <div>
+                    <h3 class="card-title">Compliance Copilot</h3>
+                    <span class="card-subtitle">Axon Rules Integrated</span>
+                  </div>
+                </div>
+                <span class="badge badge-active">Ready</span>
+              </div>
+              <div class="card-body">
+                Interrogates regulatory rule triggers, explains compliance breaches, and drafts corrective procedure checklists.
+              </div>
+              <div class="card-footer">
+                <span style="font-size: 11px; color: var(--text-muted);">Model: Claude 3.5 Sonnet</span>
+                <button class="btn btn-sm btn-primary">Try it (Chat Preview)</button>
+              </div>
+            </div>
+
+            <!-- Avatar 3 -->
+            <div class="card">
+              <div class="card-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <div class="avatar-icon">AA</div>
+                  <div>
+                    <h3 class="card-title">Agent Architect</h3>
+                    <span class="card-subtitle">Cortex Authoring Copilot</span>
+                  </div>
+                </div>
+                <span class="badge badge-active">Ready</span>
+              </div>
+              <div class="card-body">
+                Guides schema authoring, suggests tool bindings, and writes system prompts for multi-agent handoffs.
+              </div>
+              <div class="card-footer">
+                <span style="font-size: 11px; color: var(--text-muted);">Model: GPT-4o</span>
+                <button class="btn btn-sm btn-primary">Try it (Chat Preview)</button>
+              </div>
+            </div>
+
+            <!-- Avatar 4 -->
+            <div class="card">
+              <div class="card-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <div class="avatar-icon">RS</div>
+                  <div>
+                    <h3 class="card-title">Risk Sentinel</h3>
+                    <span class="card-subtitle">Assure Governance Integrated</span>
+                  </div>
+                </div>
+                <span class="badge badge-active">Ready</span>
+              </div>
+              <div class="card-body">
+                Audits runtime token consumption, security guardrails, and data leakage risks across active agents.
+              </div>
+              <div class="card-footer">
+                <span style="font-size: 11px; color: var(--text-muted);">Model: Gemini 1.5 Pro</span>
+                <button class="btn btn-sm btn-primary">Try it (Chat Preview)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lightweight Chat Preview Drawer (Flow 5: Step E -> Step F) -->
+          <div id="chat-preview-drawer" style="display: none; position: fixed; top: 0; right: 0; width: 420px; height: 100vh; background: var(--surface); border-left: 1px solid var(--border-subtle); box-shadow: -4px 0 24px rgba(0,0,0,0.08); z-index: 1000; padding: 20px; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 16px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div id="preview-avatar-badge" class="avatar-icon" style="width: 32px; height: 32px; font-size: 12px;">MS</div>
+                <div>
+                  <h3 id="preview-avatar-name" style="font-size: 14px; font-weight: 700; margin: 0;">Meeting Scribe</h3>
+                  <span class="badge badge-active" style="font-size: 9px; padding: 1px 6px;">Connected Context</span>
+                </div>
+              </div>
+              <button id="close-chat-preview-btn" class="btn btn-sm" style="padding: 4px 8px;">&times;</button>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px; min-height: 380px; margin-bottom: 16px;">
+              <!-- Bot message -->
+              <div style="align-self: flex-start; max-width: 85%; background: var(--surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 10px 12px; font-size: 12px; line-height: 1.4;">
+                <div style="font-weight: 600; font-size: 10px; color: var(--text-muted); margin-bottom: 4px;">AVATAR PREVIEW</div>
+                Hello! I am initialized with your preset parameters. How can I assist your workflow today?
+              </div>
+
+              <!-- User message -->
+              <div style="align-self: flex-end; max-width: 85%; background: var(--accent); color: white; border-radius: var(--radius-md); padding: 10px 12px; font-size: 12px; line-height: 1.4;">
+                Summarize our latest sales sync and extract the next action items.
+              </div>
+
+              <!-- Bot response -->
+              <div style="align-self: flex-start; max-width: 85%; background: var(--surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 10px 12px; font-size: 12px; line-height: 1.4;">
+                <div style="font-weight: 600; font-size: 10px; color: var(--text-muted); margin-bottom: 4px;">AVATAR PREVIEW</div>
+                Pulze Context Loaded: Analyzed <strong>Q3 Enterprise Renewal Sync</strong>. Extracted 3 action items:
+                <ul style="padding-left: 14px; margin: 6px 0 0;">
+                  <li>Update discounting thresholds for EMEA</li>
+                  <li>Schedule security review for FedRAMP scope</li>
+                  <li>Assign action owner in Jira</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Chat input bar -->
+            <div style="display: flex; gap: 8px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+              <input type="text" class="form-input" placeholder="Type a message to test this avatar..." style="flex: 1; font-size: 12px;">
+              <button class="btn btn-sm btn-primary" onclick="alert('Message sent to avatar runtime simulation.');">Send</button>
+            </div>
+          </div>
+
+          <!-- Stakeholder Architecture Note -->
+          <div style="margin-top: 28px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+            <strong>IA Architecture Principle:</strong> Avatars run inside Cortex's Agent Work Bench as built-in presets, not as a separate product surface. Clicking <em>Try an Avatar</em> anywhere on SERAA lands directly in this scoped authoring preset.
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+  <script>
+    // Wire "Try it (Chat Preview)" buttons to open the chat preview drawer (Flow 5: Step E -> Step F)
+    (function () {
+      const drawer = document.getElementById('chat-preview-drawer');
+      const closeBtn = document.getElementById('close-chat-preview-btn');
+      const avatarNameEl = document.getElementById('preview-avatar-name');
+      const avatarBadgeEl = document.getElementById('preview-avatar-badge');
+      const tryBtns = document.querySelectorAll('.card .btn-primary');
+
+      tryBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const card = e.target.closest('.card');
+          if (card) {
+            const title = card.querySelector('.card-title')?.innerText || 'Avatar';
+            const icon = card.querySelector('.avatar-icon')?.innerText || 'AV';
+            if (avatarNameEl) avatarNameEl.innerText = title;
+            if (avatarBadgeEl) avatarBadgeEl.innerText = icon;
+          }
+          if (drawer) drawer.style.display = 'block';
+        });
+      });
+
+      if (closeBtn && drawer) {
+        closeBtn.addEventListener('click', () => {
+          drawer.style.display = 'none';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

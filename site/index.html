@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERAA Platform — Home</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+  <!-- Thin Agent Icon Rail (SERAA home only) -->
+
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon -->
+        <a href="index.html" class="app-switcher" title="SERAA Platform Switcher">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+        <a href="index.html" class="brand-wordmark">SERAA</a>
+      </div>
+
+      <!-- Global Navigation -->
+      <nav class="global-nav">
+        <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+        <a href="docs.html" class="nav-link">Docs</a>
+      </nav>
+
+      <!-- Tenant & Account Controls -->
+      <div class="app-header-right">
+        <div class="org-badge" title="Organization">
+          <span class="org-badge-dot"></span>
+          <span class="org-badge-name">Acme Corp</span>
+        </div>
+
+
+        <!-- Notifications Drawer Toggle Button -->
+        <button class="header-icon-btn notification-btn" data-drawer-target="drawer-notifications" title="Notifications" aria-label="Open Notifications Drawer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="notification-dot"></span>
+        </button>
+
+        <!-- Settings Drawer Toggle Button -->
+        <button class="header-icon-btn" data-drawer-target="drawer-settings" title="Settings &amp; Preferences" aria-label="Open Settings Drawer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+
+        <!-- Account Menu with Dropdown (Billing & Usage, Assure, Entitlements) -->
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Dismissible Top Banner (Google Cloud / Azure announcement strip) -->
+    <div id="top-notification-banner" class="top-banner" data-optional="upsell">
+      <div class="top-banner-inner">
+        <div class="top-banner-message">
+          <span class="top-banner-pill">Entitlement</span>
+          <span>You're using 2 of 4 SERAA products &mdash; unlock <span class="inline-product-mark"><svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" class="inline-mark-svg"><circle cx="10" cy="4" r="2.2" fill="currentColor" stroke="none"/><circle cx="4" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="16" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="10" cy="11" r="2" fill="currentColor" stroke="none"/><line x1="10" y1="4" x2="10" y2="11"/><line x1="10" y1="11" x2="4" y2="15"/><line x1="10" y1="11" x2="16" y2="15"/></svg>Axon</span> and <span class="inline-product-mark"><svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" class="inline-mark-svg"><polygon points="7,2 13,2 16,7 13,12 7,12 4,7"/><polygon points="10,8 16,8 19,13 16,18 10,18 7,13"/></svg>Synapse</span></span>
+        </div>
+        <div class="top-banner-actions">
+          <a href="#activate-products" class="btn btn-sm btn-primary">Activate now</a>
+          <button id="dismiss-top-banner" class="top-banner-close" title="Dismiss banner">&times;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shell Body -->
+    <div class="shell-body">
+      <main class="shell-main">
+        <div class="container" style="max-width: 1080px; padding: 8px 0 40px;">
+
+          <!-- 1. Hero: SERAA is a plain launcher — no assistant, no ask bar -->
+          <section class="hero-section" style="align-items:flex-start; gap: var(--space-md);">
+            <h1 class="hero-welcome">Welcome, Rashi</h1>
+            <p style="font-size: var(--text-md); color: var(--text-muted); margin:0;">
+              Open a product. Each one runs in its own tab and keeps its own access control.
+            </p>
+
+            <!-- Direct product launcher — quick row, licensing-aware -->
+            <div class="hero-product-row" id="product-quickrow" role="navigation"
+                 aria-label="Direct Product Launch"></div>
+          </section>
+
+          <!-- 2. Product launcher — the primary content, rendered from SERAA_CONFIG -->
+          <section style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">Your products</h2>
+              <span class="section-sub">Each product opens in a new tab</span>
+            </div>
+            <div class="grid" id="product-launcher"
+                 style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); max-width: 1120px;"></div>
+
+            <!-- Assure governance strip -->
+            <a href="assure.html" class="assure-strip" title="Open Assure Governance View">
+              <div class="assure-strip-left">
+                <span class="assure-status-dot"></span>
+                <span>Assure is watching 4 products, 0 open risk items</span>
+              </div>
+              <span style="font-size: 12px; color: var(--accent); font-weight: 500;">View Governance &rarr;</span>
+            </a>
+          </section>
+
+          <!-- 2. Quick-Start Triad (Foundry pattern) -->
+          <section data-optional="extras" style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">Quick Start</h2>
+              <span class="section-sub">Start building or analyzing directly</span>
+            </div>
+            <div class="triad-grid">
+              <a href="pulze/index.html" class="triad-card">
+                <div>
+                  <div class="triad-verb">
+                    Analyze something
+                    <span style="font-size: 16px;">&rarr;</span>
+                  </div>
+                  <div class="triad-desc">Explore sales sentiment, meeting intelligence, and pipeline indicators in Pulze Intel Hub.</div>
+                </div>
+                <div style="margin-top: 12px;">
+                  <span class="corner-tag inline-product-mark">
+                    <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="inline-mark-svg"><circle cx="5" cy="15" r="1.8" fill="currentColor" stroke="none"/><path d="M5 10a5 5 0 0 1 5 5"/><path d="M5 5a10 10 0 0 1 10 10"/></svg>
+                    Pulze &bull; Sub-Catalog
+                  </span>
+                </div>
+              </a>
+
+              <a href="cortex/build.html" class="triad-card">
+                <div>
+                  <div class="triad-verb">
+                    Build an agent
+                    <span style="font-size: 16px;">&rarr;</span>
+                  </div>
+                  <div class="triad-desc">Design, orchestrate, and deploy autonomous enterprise agents in Cortex Work Bench.</div>
+                </div>
+                <div style="margin-top: 12px;">
+                  <span class="corner-tag inline-product-mark">
+                    <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" class="inline-mark-svg"><polygon points="10,2 17,6 17,14 10,18 3,14 3,6"/><rect x="8" y="8" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/></svg>
+                    Cortex &bull; Work Bench
+                  </span>
+                </div>
+              </a>
+
+              <a href="cortex/build-avatars.html" class="triad-card">
+                <div>
+                  <div class="triad-verb">
+                    Try an Avatar
+                    <span style="font-size: 16px;">&rarr;</span>
+                  </div>
+                  <div class="triad-desc">Interact with specialized persona-driven assistants across intelligence and compliance.</div>
+                </div>
+                <div style="margin-top: 12px;">
+                  <span class="corner-tag">Avatars &bull; Catalog</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- 3. "I want to..." Section (Reworked icon-first treatment) -->
+          <section data-optional="extras" style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">I want to...</h2>
+              <span class="section-sub">Direct solutions for common workflows</span>
+            </div>
+            <div class="grid grid-4">
+              <!-- Pulze Card -->
+              <a href="pulze/index.html" class="card card-clickable" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="task-header-row">
+                    <span class="task-icon-badge task-icon-teal" title="Pulze (radar/pulse mark)">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="15" r="1.8" fill="currentColor" stroke="none"/><path d="M5 10a5 5 0 0 1 5 5"/><path d="M5 5a10 10 0 0 1 10 10"/></svg>
+                    </span>
+                    <span class="corner-tag inline-product-mark">
+                      <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="inline-mark-svg"><circle cx="5" cy="15" r="1.8" fill="currentColor" stroke="none"/><path d="M5 10a5 5 0 0 1 5 5"/><path d="M5 5a10 10 0 0 1 10 10"/></svg>
+                      Sales Pulze
+                    </span>
+                  </div>
+                  <h3 class="task-card-title">Analyze team meetings</h3>
+                  <p class="task-card-desc">Digest key customer risks, sentiment, and action items across 300 logged syncs.</p>
+                </div>
+                <div class="card-footer" style="padding: 8px 0 0; border-top: none;">
+                  <span style="color: var(--accent); font-weight: 500; font-size: 12px;">Open Pulze Suite &rarr;</span>
+                </div>
+              </a>
+
+              <!-- Axon Card -->
+              <a href="axon/rule-library.html" class="card card-clickable" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="task-header-row">
+                    <span class="task-icon-badge task-icon-purple" title="Axon (node-cluster mark)">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="4" r="2.2" fill="currentColor" stroke="none"/><circle cx="4" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="16" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="10" cy="11" r="2" fill="currentColor" stroke="none"/><line x1="10" y1="4" x2="10" y2="11"/><line x1="10" y1="11" x2="4" y2="15"/><line x1="10" y1="11" x2="16" y2="15"/></svg>
+                    </span>
+                    <span class="corner-tag inline-product-mark">
+                      <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" class="inline-mark-svg"><circle cx="10" cy="4" r="2.2" fill="currentColor" stroke="none"/><circle cx="4" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="16" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="10" cy="11" r="2" fill="currentColor" stroke="none"/><line x1="10" y1="4" x2="10" y2="11"/><line x1="10" y1="11" x2="4" y2="15"/><line x1="10" y1="11" x2="16" y2="15"/></svg>
+                      Axon
+                    </span>
+                  </div>
+                  <h3 class="task-card-title">Analyze your plantation data</h3>
+                  <p class="task-card-desc">Track sensor drifts, yield indicators, and operational telemetry across estate assets.</p>
+                </div>
+                <div class="card-footer" style="padding: 8px 0 0; border-top: none;">
+                  <span style="color: var(--accent); font-weight: 500; font-size: 12px;">Explore Axon Rules &rarr;</span>
+                </div>
+              </a>
+
+              <!-- Synapse Card -->
+              <a href="synapse/workspace.html" class="card card-clickable" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="task-header-row">
+                    <span class="task-icon-badge task-icon-pink" title="Synapse (layered-hexagon mark)">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><polygon points="7,2 13,2 16,7 13,12 7,12 4,7"/><polygon points="10,8 16,8 19,13 16,18 10,18 7,13"/></svg>
+                    </span>
+                    <span class="corner-tag inline-product-mark">
+                      <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" class="inline-mark-svg"><polygon points="7,2 13,2 16,7 13,12 7,12 4,7"/><polygon points="10,8 16,8 19,13 16,18 10,18 7,13"/></svg>
+                      Synapse
+                    </span>
+                  </div>
+                  <h3 class="task-card-title">Build an adaptive memory</h3>
+                  <p class="task-card-desc">Equip agents with dynamic memory that promotes validated revisions to production.</p>
+                </div>
+                <div class="card-footer" style="padding: 8px 0 0; border-top: none;">
+                  <span style="color: var(--accent); font-weight: 500; font-size: 12px;">Adaptive Workspace &rarr;</span>
+                </div>
+              </a>
+
+              <!-- Cortex Card -->
+              <a href="cortex/build.html" class="card card-clickable" style="padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div class="task-header-row">
+                    <span class="task-icon-badge task-icon-coral" title="Cortex (hex/robot mark)">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><polygon points="10,2 17,6 17,14 10,18 3,14 3,6"/><rect x="8" y="8" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/></svg>
+                    </span>
+                    <span class="corner-tag inline-product-mark">
+                      <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" class="inline-mark-svg"><polygon points="10,2 17,6 17,14 10,18 3,14 3,6"/><rect x="8" y="8" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/></svg>
+                      Cortex
+                    </span>
+                  </div>
+                  <h3 class="task-card-title">Ship your first agent</h3>
+                  <p class="task-card-desc">Author, test in sandboxed runtime, and deploy autonomous multi-agent pipelines.</p>
+                </div>
+                <div class="card-footer" style="padding: 8px 0 0; border-top: none;">
+                  <span style="color: var(--accent); font-weight: 500; font-size: 12px;">Launch Work Bench &rarr;</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- 4. Meet your Avatars (Character-Style Cards) -->
+          <section data-optional="extras" style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">Meet your Avatars</h2>
+              <span class="section-sub">Character presets running in Cortex Agent Work Bench</span>
+            </div>
+            <div class="avatar-char-grid">
+              <!-- Avatar 1 -->
+              <div class="avatar-char-card">
+                <div class="avatar-portrait portrait-teal">
+                  <span class="portrait-pixel-glyph">MS</span>
+                </div>
+                <div class="avatar-char-body">
+                  <div class="avatar-char-meta">
+                    <h3 class="avatar-char-name">Meeting Scribe</h3>
+                    <span class="avatar-preset-tag inline-product-mark">
+                      <svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="inline-mark-svg"><circle cx="5" cy="15" r="1.8" fill="currentColor" stroke="none"/><path d="M5 10a5 5 0 0 1 5 5"/><path d="M5 5a10 10 0 0 1 10 10"/></svg>
+                      Pulze Preset
+                    </span>
+                  </div>
+                  <p class="avatar-char-desc">Summarizes executive syncs, captures decisions, and drafts action items automatically.</p>
+                </div>
+                <div class="avatar-char-footer">
+                  <a href="cortex/build-avatars.html" class="btn btn-sm btn-secondary" style="width: 100%;">Try it</a>
+                </div>
+              </div>
+
+              <!-- Avatar 2 -->
+              <div class="avatar-char-card">
+                <div class="avatar-portrait portrait-purple">
+                  <span class="portrait-pixel-glyph">CC</span>
+                </div>
+                <div class="avatar-char-body">
+                  <div class="avatar-char-meta">
+                    <h3 class="avatar-char-name">Compliance Copilot</h3>
+                    <span class="avatar-preset-tag inline-product-mark">
+                      <svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" class="inline-mark-svg"><circle cx="10" cy="4" r="2.2" fill="currentColor" stroke="none"/><circle cx="4" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="16" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="10" cy="11" r="2" fill="currentColor" stroke="none"/><line x1="10" y1="4" x2="10" y2="11"/><line x1="10" y1="11" x2="4" y2="15"/><line x1="10" y1="11" x2="16" y2="15"/></svg>
+                      Axon Preset
+                    </span>
+                  </div>
+                  <p class="avatar-char-desc">Continuously checks conversations and data streams against active governance rules.</p>
+                </div>
+                <div class="avatar-char-footer">
+                  <a href="cortex/build-avatars.html" class="btn btn-sm btn-secondary" style="width: 100%;">Try it</a>
+                </div>
+              </div>
+
+              <!-- Avatar 3 -->
+              <div class="avatar-char-card">
+                <div class="avatar-portrait portrait-coral">
+                  <span class="portrait-pixel-glyph">AA</span>
+                </div>
+                <div class="avatar-char-body">
+                  <div class="avatar-char-meta">
+                    <h3 class="avatar-char-name">Agent Architect</h3>
+                    <span class="avatar-preset-tag inline-product-mark">
+                      <svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" class="inline-mark-svg"><polygon points="10,2 17,6 17,14 10,18 3,14 3,6"/><rect x="8" y="8" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/></svg>
+                      Cortex Preset
+                    </span>
+                  </div>
+                  <p class="avatar-char-desc">Guides multi-agent orchestration schemas, prompt tuning, and connector bindings.</p>
+                </div>
+                <div class="avatar-char-footer">
+                  <a href="cortex/build-avatars.html" class="btn btn-sm btn-secondary" style="width: 100%;">Try it</a>
+                </div>
+              </div>
+
+              <!-- Avatar 4 -->
+              <div class="avatar-char-card">
+                <div class="avatar-portrait portrait-pink">
+                  <span class="portrait-pixel-glyph">RS</span>
+                </div>
+                <div class="avatar-char-body">
+                  <div class="avatar-char-meta">
+                    <h3 class="avatar-char-name">Risk Sentinel</h3>
+                    <span class="avatar-preset-tag">Assure Preset</span>
+                  </div>
+                  <p class="avatar-char-desc">Audits data drift, hallucination risk, and security anomalies across running models.</p>
+                </div>
+                <div class="avatar-char-footer">
+                  <a href="cortex/build-avatars.html" class="btn btn-sm btn-secondary" style="width: 100%;">Try it</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. Connect your tools Strip -->
+          <section data-optional="extras" style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">Connect your tools</h2>
+              <span class="section-sub">Connections here carry into the product that uses them.</span>
+            </div>
+            <div class="strip-horizontal-grid">
+              <!-- Tool 1: Google Meet (Connected) -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">GM</div>
+                    <div>
+                      <div class="strip-item-name">Google Meet</div>
+                      <span class="strip-item-badge inline-product-mark">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="inline-mark-svg"><circle cx="5" cy="15" r="1.8" fill="currentColor" stroke="none"/><path d="M5 10a5 5 0 0 1 5 5"/><path d="M5 5a10 10 0 0 1 10 10"/></svg>
+                        Pulze &bull; Transcripts
+                      </span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">Ingest call recordings and transcripts straight into Pulze Intel Hub.</p>
+                </div>
+                <span class="badge badge-active" style="display: block; text-align: center; padding: 4px 8px; font-size: 11px;">Connected</span>
+              </div>
+
+              <!-- Tool 2: Microsoft Teams -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">MT</div>
+                    <div>
+                      <div class="strip-item-name">Microsoft Teams</div>
+                      <span class="strip-item-badge">Collaboration</span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">Route meeting recordings and agent actions into enterprise channels.</p>
+                </div>
+                <button class="btn btn-sm btn-secondary" style="width: 100%;" onclick="this.outerHTML='<span class=\'badge badge-active\' style=\'display: block; text-align: center; padding: 4px 8px; font-size: 11px;\'>Connected</span>'">Connect</button>
+              </div>
+
+              <!-- Tool 3: Zoom -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">ZM</div>
+                    <div>
+                      <div class="strip-item-name">Zoom</div>
+                      <span class="strip-item-badge inline-product-mark">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="inline-mark-svg"><circle cx="5" cy="15" r="1.8" fill="currentColor" stroke="none"/><path d="M5 10a5 5 0 0 1 5 5"/><path d="M5 5a10 10 0 0 1 10 10"/></svg>
+                        Pulze &bull; Conferencing
+                      </span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">Stream audio feeds and participant transcripts into Pulze analysis.</p>
+                </div>
+                <button class="btn btn-sm btn-secondary" style="width: 100%;" onclick="this.outerHTML='<span class=\'badge badge-active\' style=\'display: block; text-align: center; padding: 4px 8px; font-size: 11px;\'>Connected</span>'">Connect</button>
+              </div>
+
+              <!-- Tool 4: SAP -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">SAP</div>
+                    <div>
+                      <div class="strip-item-name">SAP</div>
+                      <span class="strip-item-badge inline-product-mark">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" class="inline-mark-svg"><circle cx="10" cy="4" r="2.2" fill="currentColor" stroke="none"/><circle cx="4" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="16" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="10" cy="11" r="2" fill="currentColor" stroke="none"/><line x1="10" y1="4" x2="10" y2="11"/><line x1="10" y1="11" x2="4" y2="15"/><line x1="10" y1="11" x2="16" y2="15"/></svg>
+                        Axon &bull; Enterprise ERP
+                      </span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">Sync inventory, work orders, and supply chain telemetry into Axon.</p>
+                </div>
+                <button class="btn btn-sm btn-secondary" style="width: 100%;" onclick="this.outerHTML='<span class=\'badge badge-active\' style=\'display: block; text-align: center; padding: 4px 8px; font-size: 11px;\'>Connected</span>'">Connect</button>
+              </div>
+
+              <!-- Tool 5: Salesforce (Connected) -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">SF</div>
+                    <div>
+                      <div class="strip-item-name">Salesforce</div>
+                      <span class="strip-item-badge">CRM Pipeline</span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">Bidirectional sync for opportunities, account health, and buyer signals.</p>
+                </div>
+                <span class="badge badge-active" style="display: block; text-align: center; padding: 4px 8px; font-size: 11px;">Connected</span>
+              </div>
+
+              <!-- Tool 6: Snowflake -->
+              <div class="strip-item-card">
+                <div>
+                  <div class="strip-item-top">
+                    <div class="strip-icon-circle">SN</div>
+                    <div>
+                      <div class="strip-item-name">Snowflake</div>
+                      <span class="strip-item-badge inline-product-mark">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" class="inline-mark-svg"><polygon points="10,2 17,6 17,14 10,18 3,14 3,6"/><rect x="8" y="8" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/></svg>
+                        Cortex &bull; Data Cloud
+                      </span>
+                    </div>
+                  </div>
+                  <p class="strip-item-desc">Run Cortex semantic agents directly against enterprise data warehouses.</p>
+                </div>
+                <button class="btn btn-sm btn-secondary" style="width: 100%;" onclick="this.outerHTML='<span class=\'badge badge-active\' style=\'display: block; text-align: center; padding: 4px 8px; font-size: 11px;\'>Connected</span>'">Connect</button>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- 7. Recents Strip (Databricks pattern) -->
+          <section id="recents-section" style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">Continue where you left off</h2>
+              <span class="section-sub">Recently opened modules across active products</span>
+            </div>
+            <div class="recents-row">
+              <a href="pulze/sales/intel-hub.html" class="recent-card">
+                <div>
+                  <div style="font-weight: 600; font-size: 13px;">Intel Hub: Field Insights</div>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;" class="inline-product-mark">
+                    <svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="inline-mark-svg"><circle cx="5" cy="15" r="1.8" fill="currentColor" stroke="none"/><path d="M5 10a5 5 0 0 1 5 5"/><path d="M5 5a10 10 0 0 1 10 10"/></svg>
+                    Sales Pulze &bull; Opened 2 hours ago
+                  </div>
+                </div>
+                <span style="color: var(--text-subtle);">&rarr;</span>
+              </a>
+
+              <a href="cortex/build.html" class="recent-card">
+                <div>
+                  <div style="font-weight: 600; font-size: 13px;">Agent Work Bench: Triage Bot</div>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;" class="inline-product-mark">
+                    <svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" class="inline-mark-svg"><polygon points="10,2 17,6 17,14 10,18 3,14 3,6"/><rect x="8" y="8" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/></svg>
+                    Cortex &bull; Opened yesterday
+                  </div>
+                </div>
+                <span style="color: var(--text-subtle);">&rarr;</span>
+              </a>
+
+              <a href="cortex/operate.html" class="recent-card">
+                <div>
+                  <div style="font-weight: 600; font-size: 13px;">Agent Control Tower</div>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;" class="inline-product-mark">
+                    <svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" class="inline-mark-svg"><polygon points="10,2 17,6 17,14 10,18 3,14 3,6"/><rect x="8" y="8" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/></svg>
+                    Cortex &bull; Opened 3 days ago
+                  </div>
+                </div>
+                <span style="color: var(--text-subtle);">&rarr;</span>
+              </a>
+            </div>
+          </section>
+
+          <!-- 8. Activate other products (Google Cloud "Activate full account" pattern) -->
+          <section id="activate-products" data-optional="upsell" style="margin-bottom: 24px;">
+            <div class="activate-account-card">
+              <div class="activate-card-left">
+                <span class="badge badge-accent" style="font-size: 10px; margin-bottom: 8px;">Full Suite Entitlement</span>
+                <h2 style="font-size: 18px; font-weight: 700; margin: 0 0 6px;">Activate other products</h2>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0 0 16px;">
+                  Unlock full enterprise capabilities across your organization with one unified tenant license.
+                </p>
+                <ul class="activate-checklist">
+                  <li><span class="check-icon"><span class="icon icon-check"></span></span> <span><strong>4 Products</strong> &mdash; 
+                    <span class="inline-product-mark"><svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="inline-mark-svg"><circle cx="5" cy="15" r="1.8" fill="currentColor" stroke="none"/><path d="M5 10a5 5 0 0 1 5 5"/><path d="M5 5a10 10 0 0 1 10 10"/></svg>Pulze</span>, 
+                    <span class="inline-product-mark"><svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" class="inline-mark-svg"><circle cx="10" cy="4" r="2.2" fill="currentColor" stroke="none"/><circle cx="4" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="16" cy="15" r="2.2" fill="currentColor" stroke="none"/><circle cx="10" cy="11" r="2" fill="currentColor" stroke="none"/><line x1="10" y1="4" x2="10" y2="11"/><line x1="10" y1="11" x2="4" y2="15"/><line x1="10" y1="11" x2="16" y2="15"/></svg>Axon</span>, 
+                    <span class="inline-product-mark"><svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" class="inline-mark-svg"><polygon points="7,2 13,2 16,7 13,12 7,12 4,7"/><polygon points="10,8 16,8 19,13 16,18 10,18 7,13"/></svg>Synapse</span>, 
+                    <span class="inline-product-mark"><svg width="11" height="11" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" class="inline-mark-svg"><polygon points="10,2 17,6 17,14 10,18 3,14 3,6"/><rect x="8" y="8" width="4" height="4" rx="0.5" fill="currentColor" stroke="none"/></svg>Cortex</span>
+                  </span></li>
+                  <li><span class="check-icon"><span class="icon icon-check"></span></span> <span><strong>12 Modules</strong> &mdash; Intel Hub, Rule Engine, Work Bench &amp; more</span></li>
+                  <li><span class="check-icon"><span class="icon icon-check"></span></span> <span><strong>Unlimited Agent Runs</strong> &amp; Orchestration</span></li>
+                </ul>
+                <div style="margin-top: 20px;">
+                  <a href="billing.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 13px;">Activate</a>
+                </div>
+              </div>
+
+              <div class="activate-card-right">
+                <div class="activate-highlight-box">
+                  <div class="highlight-title">Unified Billing</div>
+                  <div class="highlight-desc">Consolidated invoicing with per-product consumption breakdown and spend caps.</div>
+                </div>
+                <div class="activate-highlight-box">
+                  <div class="highlight-title">Cross-Product Memory</div>
+                  <div class="highlight-desc">Synapse adaptive memory bridges meeting intelligence to compliance audits.</div>
+                </div>
+                <div class="activate-highlight-box">
+                  <div class="highlight-title">Priority Support</div>
+                  <div class="highlight-desc">Dedicated enterprise architect, custom SLA, and FedRAMP compliance review.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
+
+    <!-- 9. Real Footer (Full-width, thin top border) -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-links">
+          <a href="docs.html">Docs</a>
+          <span>&bull;</span>
+          <a href="docs.html#help">Help</a>
+          <span>&bull;</span>
+          <a href="assure.html">Security</a>
+          <span>&bull;</span>
+          <a href="#privacy">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="#terms">Terms</a>
+        </div>
+        <div class="site-footer-copy">
+          &copy; Covasant
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Drawers Backdrop Overlay -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- Right-side Utility Drawer 1: Assistant -->
+
+  <!-- Right-side Utility Drawer 2: Notifications -->
+  <aside class="utility-drawer" id="drawer-notifications" aria-label="Notifications Drawer">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <h3 class="drawer-title">Notifications</h3>
+        <span class="badge badge-accent" style="font-size: 10px; padding: 2px 6px;">3 New</span>
+      </div>
+      <button class="drawer-close-btn" data-drawer-close aria-label="Close drawer">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <div class="drawer-item-list">
+        <div class="drawer-item">
+          <div class="drawer-item-icon badge-purple">
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="4" r="2.2" fill="currentColor"/><circle cx="4" cy="15" r="2.2" fill="currentColor"/><circle cx="16" cy="15" r="2.2" fill="currentColor"/><circle cx="10" cy="11" r="2" fill="currentColor"/><line x1="10" y1="4" x2="10" y2="11"/><line x1="10" y1="11" x2="4" y2="15"/><line x1="10" y1="11" x2="16" y2="15"/></svg>
+          </div>
+          <div class="drawer-item-content">
+            <div class="drawer-item-title">Axon Rule Alert</div>
+            <div class="drawer-item-desc">Rule 'High-value churn signal' triggered 4 times in the last 2 hours.</div>
+            <div class="drawer-item-time">10 minutes ago &bull; <a href="axon/rule-library.html">View rule &rarr;</a></div>
+          </div>
+        </div>
+        <div class="drawer-item">
+          <div class="drawer-item-icon badge-pink">
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polygon points="7,2 13,2 16,7 13,12 7,12 4,7"/><polygon points="10,8 16,8 19,13 16,18 10,18 7,13"/></svg>
+          </div>
+          <div class="drawer-item-content">
+            <div class="drawer-item-title">Synapse Memory Revision</div>
+            <div class="drawer-item-desc">Adaptive memory revision 'Q3 Pricing Nuances' is pending review.</div>
+            <div class="drawer-item-time">1 hour ago &bull; <a href="synapse/workspace.html">Review &rarr;</a></div>
+          </div>
+        </div>
+        <div class="drawer-item">
+          <div class="drawer-item-icon badge-teal">
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="15" r="1.8" fill="currentColor"/><path d="M5 10a5 5 0 0 1 5 5"/><path d="M5 5a10 10 0 0 1 10 10"/></svg>
+          </div>
+          <div class="drawer-item-content">
+            <div class="drawer-item-title">Pulze Intel Hub</div>
+            <div class="drawer-item-desc">Batch transcript sync complete: 45 executive calls indexed.</div>
+            <div class="drawer-item-time">3 hours ago &bull; <a href="pulze/sales/intel-hub.html">Open Hub &rarr;</a></div>
+          </div>
+        </div>
+        <div class="drawer-item">
+          <div class="drawer-item-icon badge-coral">
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polygon points="10,2 17,6 17,14 10,18 3,14 3,6"/><rect x="8" y="8" width="4" height="4" rx="0.5" fill="currentColor"/></svg>
+          </div>
+          <div class="drawer-item-content">
+            <div class="drawer-item-title">Assure Governance Summary</div>
+            <div class="drawer-item-desc">0 open risk items detected across all 4 subscribed products.</div>
+            <div class="drawer-item-time">Yesterday &bull; <a href="assure.html">View governance &rarr;</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-footer" style="display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 11px; color: var(--text-muted);">4 alerts logged</span>
+      <a href="assure.html" style="font-size: 12px; color: var(--accent); font-weight: 500;">Assure Log &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Right-side Utility Drawer 3: Settings -->
+  <aside class="utility-drawer" id="drawer-settings" aria-label="Settings Drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Settings &amp; Preferences</h3>
+      <button class="drawer-close-btn" data-drawer-close aria-label="Close drawer">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <div class="settings-group">
+        <div class="settings-row">
+          <div>
+            <div class="settings-label">User Profile</div>
+            <div class="settings-sub">Rashi Saxena (rashi@acme.com)</div>
+          </div>
+          <span class="badge badge-active">Admin</span>
+        </div>
+        <div class="settings-row">
+          <div>
+            <div class="settings-label">Organization / Tenant</div>
+            <div class="settings-sub">Acme Corp (Primary Tenant)</div>
+          </div>
+          <a href="billing.html" class="btn btn-sm btn-secondary">Manage</a>
+        </div>
+        <div class="settings-row">
+          <div>
+            <div class="settings-label">Wireframe Theme</div>
+            <div class="settings-sub">Google Cloud / Azure Slate Light</div>
+          </div>
+          <span class="badge badge-muted">System Default</span>
+        </div>
+        <div class="settings-row">
+          <div>
+            <div class="settings-label">API Keys &amp; Model Credentials</div>
+            <div class="settings-sub">3 configured (Anthropic, OpenAI, Google)</div>
+          </div>
+          <a href="cortex/manage.html" class="btn btn-sm btn-secondary">Configure</a>
+        </div>
+        <div class="settings-row">
+          <div>
+            <div class="settings-label">Enterprise Subscription</div>
+            <div class="settings-sub">4 Products Active &bull; Next invoice Oct 1</div>
+          </div>
+          <a href="billing.html" class="btn btn-sm btn-secondary">Billing &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-footer">
+      <a href="signin.html" class="btn btn-sm btn-secondary" style="width: 100%; text-align: center; color: var(--danger);">Sign out of SERAA</a>
+    </div>
+  </aside>
+
+  <script src="shared/shell.js"></script>
+  <script>
+    // Top banner dismiss handler
+    (function () {
+      const banner = document.getElementById('top-notification-banner');
+      const dismissBtn = document.getElementById('dismiss-top-banner');
+      if (banner && dismissBtn) {
+        dismissBtn.addEventListener('click', () => {
+          banner.style.display = 'none';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

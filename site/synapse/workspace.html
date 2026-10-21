@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synapse — Adaptive Memory Workspace</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell" style="overflow: hidden;">
+    <!-- Top Bar -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <!-- Wordmark with Synapse pink mark -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="product-dot dot-pink"></span>
+          <span class="brand-wordmark" style="font-size: 15px;">Synapse</span>
+        </div>
+
+        <span class="separator" style="color: var(--border-strong); margin: 0 4px;">|</span>
+
+        <!-- Small Tenant / Project Label (No complex breadcrumb, workspace-first) -->
+        <div style="font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+          <span>Tenant: <strong>Acme Enterprise</strong></span>
+          <span class="separator">&rsaquo;</span>
+          <span>Project: <strong>Autonomous Customer Memory</strong></span>
+        </div>
+      </div>
+
+      <div class="app-header-right">
+        <!-- Toggle Button for Static Layers Side Panel -->
+        <button id="toggle-static-layers-btn" class="btn btn-sm btn-secondary" style="display: inline-flex; align-items: center; gap: 6px;">
+          <span class="icon icon-database-01 icon-sm"></span>
+          <span>Static layers</span>
+          <span class="badge badge-muted" style="font-size: 10px; padding: 1px 5px;">3</span>
+        </button>
+
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Workspace-first layout (No left nav list) -->
+    <div class="shell-body synapse-wrapper">
+      <!-- Main Adaptive Layer Canvas (Visually dominates >= 70% width) -->
+      <main class="adaptive-canvas-container" id="canvas-container">
+        <div class="container" style="max-width: 980px; margin: 0 auto;">
+
+          <!-- Adaptive Layer Canvas -->
+          <div class="adaptive-canvas">
+            <div class="adaptive-canvas-header">
+              <div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <h1 class="page-title" style="margin-bottom: 0;">Adaptive Layer</h1>
+                  <span class="memory-alive-badge">
+                    <span class="alive-dot"></span>
+                    Continuous Learning Active
+                  </span>
+                </div>
+                <p class="page-description" style="margin-top: 4px;">
+                  Directly user-facing memory workspace that synthesizes, recalibrates, and retains learnings in real time.
+                </p>
+              </div>
+
+              <div style="display: flex; gap: 8px;">
+                <button class="btn btn-sm btn-primary">+ Ingest Context</button>
+              </div>
+            </div>
+
+            <!-- Learned Memory Entries -->
+            <div class="memory-list">
+              <!-- Memory Entry 1 -->
+              <div class="memory-entry-card">
+                <div class="memory-entry-meta">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="badge badge-active" style="font-size: 11px;">Confidence: 96%</span>
+                    <span style="font-weight: 600; font-size: 12px; color: var(--text);">Entity Resolution: Procurement Authority</span>
+                  </div>
+                  <span style="color: var(--text-subtle);">Updated 8m ago</span>
+                </div>
+                <div class="memory-entry-text">
+                  Learned that EMEA subsidiaries under Acme Holdings require dual CFO &amp; VP Procurement approval for contracts exceeding &euro;250,000. Prior constraint assumed &euro;100,000 threshold.
+                </div>
+              </div>
+
+              <!-- Memory Entry 2 -->
+              <div class="memory-entry-card">
+                <div class="memory-entry-meta">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="badge badge-active" style="font-size: 11px;">Confidence: 91%</span>
+                    <span style="font-weight: 600; font-size: 12px; color: var(--text);">Terminology Shift: SLA Compliance</span>
+                  </div>
+                  <span style="color: var(--text-subtle);">Updated 42m ago</span>
+                </div>
+                <div class="memory-entry-text">
+                  Customer account teams define &ldquo;Tier 1 Resolution&rdquo; as complete root-cause incident closure, distinct from initial triage acknowledgment response time.
+                </div>
+              </div>
+
+              <!-- Memory Entry 3 -->
+              <div class="memory-entry-card">
+                <div class="memory-entry-meta">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="badge badge-accent" style="font-size: 11px;">Confidence: 87%</span>
+                    <span style="font-weight: 600; font-size: 12px; color: var(--text);">Buyer Preference: Deployment Architecture</span>
+                  </div>
+                  <span style="color: var(--text-subtle);">Updated 2h ago</span>
+                </div>
+                <div class="memory-entry-text">
+                  Consolidated feedback from 14 meetings indicates banking sector stakeholders favor customer-managed VPC endpoint tunneling over multi-tenant proxy gateways.
+                </div>
+              </div>
+
+              <!-- Memory Entry 4 -->
+              <div class="memory-entry-card">
+                <div class="memory-entry-meta">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="badge badge-accent" style="font-size: 11px;">Confidence: 84%</span>
+                    <span style="font-weight: 600; font-size: 12px; color: var(--text);">Governance Rule Calibration</span>
+                  </div>
+                  <span style="color: var(--text-subtle);">Updated 4h ago</span>
+                </div>
+                <div class="memory-entry-text">
+                  Axon rule trigger #142 frequently pairs with GDPR Art. 28 processor clauses; adaptive layer automatically suggests pre-approved vendor DPA annex.
+                </div>
+              </div>
+            </div>
+
+            <!-- Workspace Architecture Note -->
+            <div style="margin-top: 24px; padding: 12px 16px; background: var(--surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+              <strong>IA Architecture Principle:</strong> Synapse workspace stays <em>canvas-first</em>. One Adaptive Layer is directly user-facing and learns continuously. Static layers stay in the governed side panel archive and reach the adaptive layer only through revision and promotion.
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <!-- Side Panel: Static Layers (Collapsed by default, archive aesthetic) -->
+      <aside class="static-layers-drawer" id="static-layers-drawer" aria-label="Static Layers Archive">
+        <div class="static-drawer-header">
+          <div>
+            <div style="font-weight: 700; font-size: 13px; color: var(--text);">Static Layers Archive</div>
+            <div style="font-size: 11px; color: var(--text-muted);">Governed revision history &amp; promotion queue</div>
+          </div>
+          <button id="close-drawer-btn" class="btn btn-sm" style="padding: 2px 8px; font-size: 16px; line-height: 1;" title="Close Panel">&times;</button>
+        </div>
+
+        <div class="static-drawer-body">
+          <div style="font-size: 11px; color: var(--text-muted); padding: 2px 4px;">
+            Static layers are frozen snapshots. Revisions undergo review before promotion to the adaptive baseline.
+          </div>
+
+          <!-- Layer Entry 1: Under Review -->
+          <div class="layer-archive-card" id="layer-entry-1">
+            <div class="layer-card-top">
+              <span class="layer-version-title">v2.4 &bull; Procurement Protocols</span>
+              <span class="badge badge-muted status-tag" style="color: var(--warning); border-color: var(--warning-border);">Under review</span>
+            </div>
+            <p style="color: var(--text-muted); margin: 0; line-height: 1.4;">
+              Formalizes dual-approval thresholds for EMEA subsidiaries into static governance rules.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+              <span style="font-size: 10px; color: var(--text-subtle);">Author: Rashi Saxena</span>
+              <button class="btn btn-sm btn-primary promote-action-btn" data-target="layer-entry-1">Promote</button>
+            </div>
+          </div>
+
+          <!-- Layer Entry 2: Draft -->
+          <div class="layer-archive-card" id="layer-entry-2">
+            <div class="layer-card-top">
+              <span class="layer-version-title">v2.3 &bull; Banking VPC Architecture</span>
+              <span class="badge badge-muted status-tag">Draft</span>
+            </div>
+            <p style="color: var(--text-muted); margin: 0; line-height: 1.4;">
+              Statically binds customer-managed endpoint requirements into enterprise deployment schemas.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+              <span style="font-size: 10px; color: var(--text-subtle);">Author: Systems Agent</span>
+              <button class="btn btn-sm btn-primary promote-action-btn" data-target="layer-entry-2">Promote</button>
+            </div>
+          </div>
+
+          <!-- Layer Entry 3: Promoted (Historical baseline) -->
+          <div class="layer-archive-card promoted" id="layer-entry-3">
+            <div class="layer-card-top">
+              <span class="layer-version-title">v2.2 &bull; Core Semantic Taxonomy</span>
+              <span class="badge badge-active status-tag">Promoted</span>
+            </div>
+            <p style="color: var(--text-muted); margin: 0; line-height: 1.4;">
+              Foundational taxonomy defining cross-product ontology across Pulze, Axon, and Cortex.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+              <span style="font-size: 10px; color: var(--text-subtle);">Promoted on 2026-09-01</span>
+              <button class="btn btn-sm btn-disabled" disabled>Promoted</button>
+            </div>
+          </div>
+
+          <!-- Layer Entry 4: Promoted -->
+          <div class="layer-archive-card promoted" id="layer-entry-4">
+            <div class="layer-card-top">
+              <span class="layer-version-title">v2.1 &bull; Baseline Safety Constraints</span>
+              <span class="badge badge-active status-tag">Promoted</span>
+            </div>
+            <p style="color: var(--text-muted); margin: 0; line-height: 1.4;">
+              Initial regulatory constraint checks and security bounds for autonomous tool usage.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+              <span style="font-size: 10px; color: var(--text-subtle);">Promoted on 2026-08-15</span>
+              <button class="btn btn-sm btn-disabled" disabled>Promoted</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+  <script>
+    // Synapse Side Panel Drawer Toggle & Promote Action Handler
+    (function () {
+      const drawer = document.getElementById('static-layers-drawer');
+      const toggleBtn = document.getElementById('toggle-static-layers-btn');
+      const closeBtn = document.getElementById('close-drawer-btn');
+
+      // Toggle drawer
+      if (toggleBtn && drawer) {
+        toggleBtn.addEventListener('click', () => {
+          drawer.classList.toggle('open');
+        });
+      }
+
+      if (closeBtn && drawer) {
+        closeBtn.addEventListener('click', () => {
+          drawer.classList.remove('open');
+        });
+      }
+
+      // Promote button handler: updates badge to "Promoted" and grays out row
+      document.querySelectorAll('.promote-action-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const cardId = btn.getAttribute('data-target');
+          const card = document.getElementById(cardId);
+          if (card) {
+            const statusTag = card.querySelector('.status-tag');
+            if (statusTag) {
+              statusTag.textContent = 'Promoted';
+              statusTag.className = 'badge badge-active status-tag';
+              statusTag.style.color = '';
+              statusTag.style.borderColor = '';
+            }
+            card.classList.add('promoted');
+            btn.textContent = 'Promoted';
+            btn.className = 'btn btn-sm btn-disabled';
+            btn.disabled = true;
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

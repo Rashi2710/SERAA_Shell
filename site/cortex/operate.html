@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cortex — Operate (Control Tower)</title>
+  <link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar: Persistent across all Cortex pages -->
+    <header class="app-header">
+      <div class="app-header-left">
+        <!-- Reusable App Switcher Icon linking back to SERAA home -->
+        <a href="../index.html" class="app-switcher" title="Back to SERAA Home">
+          <div class="app-switcher-grid">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </a>
+
+        <!-- Wordmark with Cortex coral mark -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="product-dot dot-coral"></span>
+          <span class="brand-wordmark" style="font-size: 15px;">CORTEX</span>
+        </div>
+
+        <span class="separator" style="color: var(--border-strong); margin: 0 4px;">|</span>
+
+        <!-- System / Org / Project Scope Selector -->
+        <nav class="scope-breadcrumb" aria-label="Cortex Scope Hierarchy">
+          <span class="scope-pill">System</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill">Enterprise AI Unit</span>
+          <span class="separator">&rsaquo;</span>
+          <span class="scope-pill" style="font-weight: 600; color: var(--text);">Production Orchestration</span>
+        </nav>
+      </div>
+
+      <!-- Foundry Persistent Top Nav -->
+      <nav class="global-nav">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="build.html" class="nav-link">Build</a>
+        <a href="operate.html" class="nav-link active" aria-current="page">Observe</a>
+        <a href="manage.html" class="nav-link">Manage</a>
+        <a href="docs.html" class="nav-link">Docs</a>
+      </nav>
+
+      <div class="app-header-right">
+        <div class="account-menu-wrapper">
+          <button class="user-avatar" title="Account Menu">RS</button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-header">
+              <div style="font-weight: 600; font-size: 13px;">Rashi Saxena</div>
+              <div style="font-size: 11px; color: var(--text-muted);">rashi@acme.com &bull; Admin</div>
+            </div>
+            <div class="account-dropdown-divider"></div>
+            <a href="../billing.html" class="account-dropdown-item">
+              <span>Billing &amp; Usage</span>
+              <span class="badge badge-muted" style="font-size: 10px;">Admin</span>
+            </a>
+            <a href="../assure.html" class="account-dropdown-item">
+              <span>Assure Governance</span>
+              <span class="badge badge-active" style="font-size: 10px;">Control Plane</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../handoff.html" class="account-dropdown-item" style="color: var(--text-muted); font-size: 11px;">
+              <span>Re-check Entitlements &rarr;</span>
+            </a>
+            <div class="account-dropdown-divider"></div>
+            <a href="../signin.html" class="account-dropdown-item logout">
+              <span>Sign out</span>
+              <span style="font-size: 12px; opacity: 0.8;">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Shell Body: Operate/Observe Surface -->
+    <div class="shell-body">
+      <main class="shell-main">
+        <div class="container" style="max-width: 1080px; padding: 12px 0 40px;">
+          <!-- Section Header -->
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <h1 class="page-title" style="margin-bottom: 0;">Observe: Agent Control Tower</h1>
+                <span class="badge badge-active" style="font-size: 11px;">Control Tower &bull; Observe Mesh</span>
+              </div>
+              <p class="page-description" style="margin-top: 4px;">
+                Telemetry, health diagnostics, cost surveillance, and execution volume across all active agent instances.
+              </p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <select class="form-select" style="font-size: 12px;">
+                <option>Last 24 Hours</option>
+                <option>Last 7 Days</option>
+                <option>Current Billing Cycle</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- "0 Active alerts" Panel per IA-SPEC.md -->
+          <div class="alert-banner-panel">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="icon icon-check icon-sm"></span>
+              <span><strong>0 Active alerts</strong> &bull; All 14 deployed agent nodes and connector gateways are operating within normal SLOs.</span>
+            </div>
+            <a href="#alert-history" style="color: inherit; text-decoration: underline; font-size: 12px;">View Alert History</a>
+          </div>
+
+          <!-- 4 Stat Cards per IA-SPEC.md -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-label">Running Agents</span>
+              <span class="metric-value">14</span>
+              <span class="metric-delta">&bull; 4 clusters active</span>
+              <span class="metric-caption">100% healthy healthchecks</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Estimated Cost (Cycle)</span>
+              <span class="metric-value">$3,420.80</span>
+              <span class="metric-delta">&uarr; 4.1% vs last cycle</span>
+              <span class="metric-caption">On track for $4,100 quota cap</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Agent Success Rate</span>
+              <span class="metric-value">99.4%</span>
+              <span class="metric-delta">&bull; Goal &gt; 99.0%</span>
+              <span class="metric-caption">4 failed steps out of 680</span>
+            </div>
+
+            <div class="metric-card">
+              <span class="metric-label">Token Usage (24h)</span>
+              <span class="metric-value">18.4M</span>
+              <span class="metric-delta">&bull; Prompt: 14.2M &bull; Gen: 4.2M</span>
+              <span class="metric-caption">Avg latency: 420ms</span>
+            </div>
+          </div>
+
+          <!-- Agent Run Volume Over Time Placeholder Chart Area -->
+          <div class="card" style="margin-top: 24px;">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Agent Run Volume Over Time</h2>
+                <span class="card-subtitle">Aggregated invocations and concurrent run sessions</span>
+              </div>
+              <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-muted);">
+                <span>&bull; Production Runs</span>
+                <span>&bull; Background Tasks</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="chart-placeholder-box">
+                <!-- Y-Axis Labels -->
+                <div class="chart-axis-y">
+                  <span>10k</span>
+                  <span>7.5k</span>
+                  <span>5k</span>
+                  <span>2.5k</span>
+                  <span>0</span>
+                </div>
+
+                <!-- Center Wireframe Graphic -->
+                <div style="text-align: center; color: var(--text-muted); z-index: 1;">
+                  <div style="margin-bottom: 4px;"><span class="icon icon-bar-chart-01 icon-lg"></span></div>
+                  <div style="font-weight: 600; font-size: 13px; color: var(--text);">Run Volume Chart Area</div>
+                  <div style="font-size: 11px; color: var(--text-subtle); margin-top: 2px;">Peak concurrency: 42 runs &bull; Average duration: 1.8s</div>
+                </div>
+
+                <!-- X-Axis Labels -->
+                <div class="chart-axis-x">
+                  <span>00:00</span>
+                  <span>04:00</span>
+                  <span>08:00</span>
+                  <span>12:00</span>
+                  <span>16:00</span>
+                  <span>20:00</span>
+                  <span>Now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Run logs — deep-link target from an agent in Build -->
+          <div id="logs" class="card" style="margin-top: 24px;">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Run logs</h2>
+                <span class="card-subtitle">Customer Support Triage Agent &bull; last 30 minutes</span>
+              </div>
+              <a href="build.html" class="btn btn-sm" data-trail="Build&gt;Agent Work Bench">&larr; Back to agent</a>
+            </div>
+            <table class="wire-table">
+              <thead><tr><th>Time</th><th>Level</th><th>Step</th><th>Message</th></tr></thead>
+              <tbody>
+                <tr><td>14:02:11</td><td><span class="badge badge-muted">info</span></td><td>tool.crm.lookup</td><td>Resolved account 48122 in 180&nbsp;ms</td></tr>
+                <tr><td>14:02:12</td><td><span class="badge badge-muted">info</span></td><td>model.classify</td><td>Intent = billing_dispute (0.94)</td></tr>
+                <tr><td>14:02:14</td><td><span class="badge badge-active">ok</span></td><td>tool.zendesk.reply</td><td>Draft reply posted to ticket 9921</td></tr>
+                <tr><td>14:02:15</td><td><span class="badge badge-muted">warn</span></td><td>guardrail.pii</td><td>Redacted 1 account number before send</td></tr>
+                <tr><td>14:02:19</td><td><span class="badge badge-active">ok</span></td><td>run.complete</td><td>Finished in 8.1&nbsp;s &bull; 4 tool calls</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../shared/shell.js"></script>
+</body>
+</html>
