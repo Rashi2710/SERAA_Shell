@@ -800,46 +800,6 @@ window.isEnterprise = function () {
     });
   }
 
-  // Platform row on the SERAA home: the shell's own surfaces, with live
-  // figures derived from the same config the product cards read.
-  function renderPlatformRow() {
-    var host = document.getElementById('platform-row');
-    if (!host) return;
-
-    var ownedProducts = ['pulze','axon','synapse','cortex'].filter(window.isOwned);
-    var spend = BILLING.reduce(function (a, p) {
-      return a + p.subs.reduce(function (b, sb) {
-        return b + (window.isOwned(sb.key) ? sb.cost : 0);
-      }, 0);
-    }, 0);
-
-    var items = [
-      { page: 'docs.html', title: 'Documentation',
-        sub: 'Getting started, access &amp; SBAC, licensing',
-        stat: ownedProducts.length + ' product' + (ownedProducts.length === 1 ? '' : 's') + ' documented',
-        tone: 'muted' },
-      { page: 'billing.html', title: 'Billing &amp; Usage',
-        sub: 'Spend this cycle across every product',
-        stat: money(spend) + ' this cycle', tone: 'strong' },
-      { page: 'assure.html', title: 'Assure',
-        sub: 'Guardrails and governance across the suite',
-        stat: ownedProducts.length + ' watched &middot; 0 open risk items', tone: 'ok' }
-    ];
-
-    host.innerHTML = items.map(function (it) {
-      var statStyle = it.tone === 'strong' ? 'font-size:var(--text-xl);line-height:var(--line-xl);font-weight:var(--weight-semibold);color:var(--text-heading)'
-                    : it.tone === 'ok'     ? 'font-size:var(--text-sm);color:var(--success);font-weight:var(--weight-medium)'
-                                           : 'font-size:var(--text-sm);color:var(--text-muted)';
-      var dot = it.tone === 'ok' ? '<span class="assure-status-dot" style="margin-right:6px"></span>' : '';
-      return '<a class="card card-clickable" href="' + url(it.page) + '">' +
-        '<span class="card-title">' + it.title + '</span>' +
-        '<span class="card-subtitle">' + it.sub + '</span>' +
-        '<div class="card-body" style="' + statStyle + '">' + dot + it.stat + '</div>' +
-        '<div class="card-footer"><span style="font-size:12px;color:var(--accent);font-weight:500">Open &rarr;</span></div>' +
-      '</a>';
-    }).join('');
-  }
-
   /* ---- optional surfaces ------------------------------------------------ */
 
   function applyConfig() {
@@ -857,7 +817,6 @@ window.isEnterprise = function () {
     renderAgentConfig();
     renderBilling();
     renderProductDocs();
-    renderPlatformRow();
 
     var recents = document.getElementById('recents-section');
     if (recents) {
