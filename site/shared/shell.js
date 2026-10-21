@@ -14,8 +14,8 @@ window.SERAA_CONFIG = {
   // 'enterprise' → unlicensed products are hidden everywhere
   deployment: 'saas',
 
-  showHomeExtras: false,   // Quick Start, I want to…, Meet your Avatars, Connect your tools
-  showUpsell: false,       // top entitlement banner + "Activate other products" card
+  showHomeExtras: true,   // Quick Start, I want to…, Meet your Avatars, Connect your tools
+  showUpsell: true,       // top entitlement banner + "Activate other products" card
 
   owned: {
     pulze:   { sales: true, market: false, liquidity: false },

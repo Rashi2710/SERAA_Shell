@@ -6598,15 +6598,17 @@ button, input, select, textarea {
               <span class="section-sub">Each product opens in a new tab</span>
             </div>
             <div class="grid" id="product-launcher" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); max-width: 1120px;"></div>
+          </section>
 
-            <!-- Assure governance strip -->
-            <a href="#/assure" class="assure-strip" title="Open Assure Governance View">
-              <div class="assure-strip-left">
-                <span class="assure-status-dot"></span>
-                <span>Assure is watching 4 products, 0 open risk items</span>
-              </div>
-              <span style="font-size: 12px; color: var(--accent); font-weight: 500;">View Governance &rarr;</span>
-            </a>
+          <!-- 3. Platform — the shell's own surfaces. On a launcher home these are
+               first-class destinations, not links buried in a menu. Figures come
+               from the same SERAA_CONFIG the product cards read. -->
+          <section style="margin-bottom: 36px;">
+            <div class="section-header">
+              <h2 class="section-title">Platform</h2>
+              <span class="section-sub">Across every product</span>
+            </div>
+            <div class="grid grid-3" id="platform-row"></div>
           </section>
 
           <!-- 2. Quick-Start Triad (Foundry pattern) -->
@@ -9008,8 +9010,8 @@ window.SERAA_CONFIG = {
   // 'enterprise' → unlicensed products are hidden everywhere
   deployment: 'saas',
 
-  showHomeExtras: false,   // Quick Start, I want to…, Meet your Avatars, Connect your tools
-  showUpsell: false,       // top entitlement banner + "Activate other products" card
+  showHomeExtras: true,   // Quick Start, I want to…, Meet your Avatars, Connect your tools
+  showUpsell: true,       // top entitlement banner + "Activate other products" card
 
   owned: {
     pulze:   { sales: true, market: false, liquidity: false },
@@ -9619,6 +9621,46 @@ window.isEnterprise = function () {
     });
   }
 
+  // Platform row on the SERAA home: the shell's own surfaces, with live
+  // figures derived from the same config the product cards read.
+  function renderPlatformRow() {
+    var host = document.getElementById('platform-row');
+    if (!host) return;
+
+    var ownedProducts = ['pulze','axon','synapse','cortex'].filter(window.isOwned);
+    var spend = BILLING.reduce(function (a, p) {
+      return a + p.subs.reduce(function (b, sb) {
+        return b + (window.isOwned(sb.key) ? sb.cost : 0);
+      }, 0);
+    }, 0);
+
+    var items = [
+      { route: 'docs', title: 'Documentation',
+        sub: 'Getting started, access &amp; SBAC, licensing',
+        stat: ownedProducts.length + ' product' + (ownedProducts.length === 1 ? '' : 's') + ' documented',
+        tone: 'muted' },
+      { route: 'billing', title: 'Billing &amp; Usage',
+        sub: 'Spend this cycle across every product',
+        stat: money(spend) + ' this cycle', tone: 'strong' },
+      { route: 'assure', title: 'Assure',
+        sub: 'Guardrails and governance across the suite',
+        stat: ownedProducts.length + ' watched &middot; 0 open risk items', tone: 'ok' }
+    ];
+
+    host.innerHTML = items.map(function (it) {
+      var statStyle = it.tone === 'strong' ? 'font-size:var(--text-xl);line-height:var(--line-xl);font-weight:var(--weight-semibold);color:var(--text-heading)'
+                    : it.tone === 'ok'     ? 'font-size:var(--text-sm);color:var(--success);font-weight:var(--weight-medium)'
+                                           : 'font-size:var(--text-sm);color:var(--text-muted)';
+      var dot = it.tone === 'ok' ? '<span class="assure-status-dot" style="margin-right:6px"></span>' : '';
+      return '<a class="card card-clickable" href="#/' + it.route + '">' +
+        '<span class="card-title">' + it.title + '</span>' +
+        '<span class="card-subtitle">' + it.sub + '</span>' +
+        '<div class="card-body" style="' + statStyle + '">' + dot + it.stat + '</div>' +
+        '<div class="card-footer"><span style="font-size:12px;color:var(--accent);font-weight:500">Open &rarr;</span></div>' +
+      '</a>';
+    }).join('');
+  }
+
   function applyConfig() {
     var cfg = window.SERAA_CONFIG;
 
@@ -9638,6 +9680,7 @@ window.isEnterprise = function () {
     renderAgentConfig();
     renderBilling();
     renderProductDocs();
+    renderPlatformRow();
 
     // "Continue where you left off" only makes sense across >1 owned product
     var recents = document.getElementById('recents-section');
